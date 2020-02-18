@@ -20,6 +20,9 @@
 		8AB10971F1353B2B07E5096A /* libPods-zdrowyKoszykAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A57F90708CA3BBBB81A22FC9 /* libPods-zdrowyKoszykAppTests.a */; };
 		97DAFA2315C92D99F8C00481 /* libPods-zdrowyKoszykApp-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 07551AD7E4DD2172FB108511 /* libPods-zdrowyKoszykApp-tvOSTests.a */; };
 		E4991CF48646E28DD8BC07B1 /* libPods-zdrowyKoszykApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D357A4E46B3B0E1129C0E030 /* libPods-zdrowyKoszykApp.a */; };
+		77E90EE00BF8431A9E0103CE /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8222E441B0AE4D21A0E2A3B2 /* OpenSans-Bold.ttf */; };
+		B1AC20E2CDA84BF8A122D608 /* OpenSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1B026B8E2C1F481C9BD4E762 /* OpenSans-Light.ttf */; };
+		392415E4579B4AD1866FFDC2 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 73FA51A73DD64641AFCD7559 /* OpenSans-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +70,9 @@
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 		F30FC9F4812D5F6BBBA606A0 /* Pods-zdrowyKoszykApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zdrowyKoszykApp.release.xcconfig"; path = "Target Support Files/Pods-zdrowyKoszykApp/Pods-zdrowyKoszykApp.release.xcconfig"; sourceTree = "<group>"; };
+		8222E441B0AE4D21A0E2A3B2 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; name = "OpenSans-Bold.ttf"; path = "../app/assets/fonts/OpenSans-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		1B026B8E2C1F481C9BD4E762 /* OpenSans-Light.ttf */ = {isa = PBXFileReference; name = "OpenSans-Light.ttf"; path = "../app/assets/fonts/OpenSans-Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		73FA51A73DD64641AFCD7559 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; name = "OpenSans-Regular.ttf"; path = "../app/assets/fonts/OpenSans-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +187,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				51319130C919C2ACEF691A76 /* Pods */,
+				BD94F432577D4505A78FBC76 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -197,6 +204,17 @@
 			);
 			name = Products;
 			sourceTree = "<group>";
+		};
+		BD94F432577D4505A78FBC76 /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				8222E441B0AE4D21A0E2A3B2 /* OpenSans-Bold.ttf */,
+				1B026B8E2C1F481C9BD4E762 /* OpenSans-Light.ttf */,
+				73FA51A73DD64641AFCD7559 /* OpenSans-Regular.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -285,7 +303,7 @@
 		83CBB9F71A601CBA00E9B192 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0940;
+				LastUpgradeCheck = 940;
 				ORGANIZATIONNAME = Facebook;
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
@@ -338,6 +356,9 @@
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
+				77E90EE00BF8431A9E0103CE /* OpenSans-Bold.ttf in Resources */,
+				B1AC20E2CDA84BF8A122D608 /* OpenSans-Light.ttf in Resources */,
+				392415E4579B4AD1866FFDC2 /* OpenSans-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
