@@ -1,25 +1,25 @@
-import { Dimensions, ViewStyle, TextStyle } from "react-native";
-import { StyleSheet } from "react-native";
-import { ifIphoneX } from "react-native-iphone-x-helper";
+import { Dimensions, ViewStyle, TextStyle } from 'react-native'
+import { StyleSheet } from 'react-native'
+import { ifIphoneX } from 'react-native-iphone-x-helper'
 
-const fullWidth = Dimensions.get("window").width;
+const fullWidth = Dimensions.get('window').width
 
 //TextStyle for elements which contains e.g. fontWeight, textAlign
 //ViewStyle for elements which contains e.g. backgroundColor, borderStyle
 
 export default StyleSheet.create({
   alertContainer: {
-    position: "absolute",
+    position: 'absolute',
     zIndex: 100,
     width: fullWidth,
     top: 0,
     ...ifIphoneX(
       {
-        paddingTop: 30
+        paddingTop: 30,
       },
-      {}
+      {},
     ),
-    justifyContent: "center"
+    justifyContent: 'center',
   },
   successContainer: {
     fontSize: 16,
@@ -28,9 +28,9 @@ export default StyleSheet.create({
     paddingLeft: 35,
     paddingRight: 35,
     width: fullWidth,
-    color: "#fff",
-    textAlign: "center",
-    backgroundColor: "#92d3a2"
+    color: '#fff',
+    textAlign: 'center',
+    backgroundColor: '#92d3a2',
   },
   dangerContainer: {
     fontSize: 16,
@@ -39,18 +39,18 @@ export default StyleSheet.create({
     paddingLeft: 35,
     paddingRight: 35,
     width: fullWidth,
-    color: "#fff",
-    textAlign: "center",
-    backgroundColor: "#cc7897"
+    color: '#fff',
+    textAlign: 'center',
+    backgroundColor: '#cc7897',
   },
   closeAlert: {
-    position: "absolute",
+    position: 'absolute',
     right: 10,
     ...ifIphoneX(
       {
-        top: 42
+        top: 42,
       },
-      {}
-    )
-  }
-});
+      {},
+    ),
+  },
+})

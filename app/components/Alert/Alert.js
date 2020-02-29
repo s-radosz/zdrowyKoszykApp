@@ -1,18 +1,18 @@
-import React, { useState, useEffect } from "react";
-import { Text, View, TouchableHighlight, Image } from "react-native";
-import styles from "./style";
-//const close = require("./../../assets/images/closeWhite.png");
+import React, { useState, useEffect } from 'react'
+import { Text, View, TouchableHighlight, Image } from 'react-native'
+import styles from './style'
+const close = require('./../../Assets/images/closeWhite.png')
 
-const Alert = (props) => {
-  const [showAlert, setShowAlert] = useState(true);
-  const [message, setMessage] = useState("");
+const Alert = props => {
+  const [showAlert, setShowAlert] = useState(true)
+  const [message, setMessage] = useState('')
 
   useEffect(() => {
     if (props.alertMessage) {
-      setShowAlert(true);
-      setMessage(props.alertMessage);
+      setShowAlert(true)
+      setMessage(props.alertMessage)
     }
-  }, [props.alertMessage]);
+  }, [props.alertMessage])
 
   if (showAlert) {
     return (
@@ -20,9 +20,9 @@ const Alert = (props) => {
         <Text
           data-test="message"
           style={
-            props.alertType == "success"
+            props.alertType == 'success'
               ? styles.successContainer
-              : props.alertType == "danger"
+              : props.alertType == 'danger'
               ? styles.dangerContainer
               : null
           }
@@ -32,14 +32,14 @@ const Alert = (props) => {
         <TouchableHighlight
           onPress={props.closeAlert}
           style={styles.closeAlert}
-          underlayColor={"#fff"}
+          underlayColor={'#fff'}
         >
           <Image source={close} style={{ width: 16, height: 16 }} />
         </TouchableHighlight>
       </View>
-    );
+    )
   } else {
-    return <View />;
+    return <View />
   }
-};
-export default Alert;
+}
+export default Alert

@@ -1,83 +1,90 @@
-import { createAppContainer } from "react-navigation";
-import React, { Component } from "react";
-import { SafeAreaView } from "react-native";
-import Welcome from "../components/Welcome/Welcome";
-import ScanBarcode from "../components/ScanBarcode/ScanBarcode";
-import { fadeIn } from "react-navigation-transitions";
-import { GlobalContext } from "./../Context/GlobalContext";
-import NavigationService from "./NavigationService";
-import { ifIphoneX } from "react-native-iphone-x-helper";
+import { createAppContainer } from 'react-navigation'
+import React, { Component } from 'react'
+import { SafeAreaView } from 'react-native'
+import Welcome from '../Screen/Welcome/Welcome'
+import ScanBarcode from '../Screen/ScanBarcode/ScanBarcode'
+import ProductDetails from './../Screen/ProductDetails/ProductDetails'
+import ProductNotFound from './../Screen/ProductNotFound/ProductNotFound'
+import { GlobalContext } from './../Context/GlobalContext'
+import NavigationService from './NavigationService'
+import { ifIphoneX } from 'react-native-iphone-x-helper'
 
-import { createStackNavigator } from 'react-navigation-stack';
+import { createStackNavigator } from 'react-navigation-stack'
 
 const MainStack = createStackNavigator(
   {
     Welcome: {
       screen: Welcome,
       navigationOptions: {
-        header: null
-      }
+        header: null,
+      },
     },
     ScanBarcode: {
       screen: ScanBarcode,
       navigationOptions: {
         header: null,
-        
-      }
+      },
+    },
+    ProductDetails: {
+      screen: ProductDetails,
+      navigationOptions: {
+        header: null,
+      },
+    },
+    ProductNotFound: {
+      screen: ProductNotFound,
+      navigationOptions: {
+        header: null,
+      },
     },
   },
   {
-    initialRouteName: "Welcome",
+    initialRouteName: 'Welcome',
     // transitionConfig: () => fadeIn(),
-    headerMode: "none"
-  }
-);
+    headerMode: 'none',
+  },
+)
 
-const AppContainer = createAppContainer(MainStack);
+const AppContainer = createAppContainer(MainStack)
 
-export default class App extends Component{
+export default class App extends Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       showAlert: false,
-      alertMessage: "",
-      alertType: "",
-      API_URL: "http://127.0.0.1:8080/",
+      alertMessage: '',
+      alertType: '',
+      API_URL: 'http://zdrowy-koszyk.live/api/',
       //API_URL: "http://10.0.2.2:8000/",
       //API_URL: "https://e-mamy.pl/",
       showLoader: false,
-    };
+    }
+  }
+  setShowLoader = param => {
+    this.setState({
+      showLoader: param,
+    })
   }
 
-  setShowLoader = (param) => {
-    this.setState({
-      showLoader: param
-    });
-  };
-
-  setAlert = (
-    showAlert,
-    alertType,
-    alertMessage
-  ) => {
+  setAlert = (showAlert, alertType, alertMessage) => {
     this.setState({
       showAlert: showAlert,
       alertType: alertType,
-      alertMessage: alertMessage
-    });
-  };
+      alertMessage: alertMessage,
+    })
+  }
 
   closeAlert = () => {
     this.setState({
       showAlert: false,
-      alertType: "",
-      alertMessage: ""
-    });
-  };
+      alertType: '',
+      alertMessage: '',
+    })
+  }
 
   componentDidMount = async () => {
-    NavigationService.navigate("Welcome", {});
-  };
+    NavigationService.navigate('Welcome', {})
+  }
 
   render() {
     const {
@@ -86,7 +93,8 @@ export default class App extends Component{
       alertMessage,
       API_URL,
       showLoader,
-    } = this.state;
+      productDetails,
+    } = this.state
 
     return (
       <GlobalContext.Provider
@@ -99,20 +107,19 @@ export default class App extends Component{
           showLoader: showLoader,
           setShowLoader: this.setShowLoader,
           closeAlert: this.closeAlert,
-          //@ts-ignore
-          NavigationService: NavigationService
+          NavigationService: NavigationService,
         }}
       >
         <SafeAreaView
           style={{
             flex: 1,
-            backgroundColor: "#fff"
+            backgroundColor: '#fff',
           }}
         >
           {/*<StatusBar backgroundColor="#f4a157" barStyle="light-content" />*/}
           <AppContainer
             ref={navigatorRef => {
-              NavigationService.setTopLevelNavigator(navigatorRef);
+              NavigationService.setTopLevelNavigator(navigatorRef)
             }}
             alertType={alertType}
             alertMessage={alertMessage}
@@ -121,6 +128,6 @@ export default class App extends Component{
           />
         </SafeAreaView>
       </GlobalContext.Provider>
-    );
+    )
   }
 }
