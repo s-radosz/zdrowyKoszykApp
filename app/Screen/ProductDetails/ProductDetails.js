@@ -66,7 +66,10 @@ const ProductDetails = ({ navigation }) => {
           style={[styles.content, isActive ? styles.active : styles.inactive]}
           transition="backgroundColor"
         >
-          <Animatable.Text animation={isActive ? 'fadeIn' : undefined}>
+          <Animatable.Text
+            style={styles.ingredientsText}
+            animation={isActive ? 'fadeIn' : undefined}
+          >
             {section.description}
           </Animatable.Text>
           <Animatable.Text
@@ -165,6 +168,9 @@ const styles = StyleSheet.create({
     paddingTop: 10,
     color: '#616161',
   },
+  ingredientsText: {
+    color: '#616161',
+  },
   header: {
     backgroundColor: '#F5FCFF',
     padding: 10,
@@ -247,7 +253,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     justifyContent: 'center',
     flexDirection: 'row',
-    paddingTop: 10,
+    paddingTop: 12,
     paddingBottom: 10,
     backgroundColor: '#fff',
   },

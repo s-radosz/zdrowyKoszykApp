@@ -5,6 +5,7 @@ import Welcome from '../Screen/Welcome/Welcome'
 import ScanBarcode from '../Screen/ScanBarcode/ScanBarcode'
 import ProductDetails from './../Screen/ProductDetails/ProductDetails'
 import ProductNotFound from './../Screen/ProductNotFound/ProductNotFound'
+import GoogleLogin from './../Screen/GoogleLogin/GoogleLogin'
 import { GlobalContext } from './../Context/GlobalContext'
 import NavigationService from './NavigationService'
 import { ifIphoneX } from 'react-native-iphone-x-helper'
@@ -33,6 +34,12 @@ const MainStack = createStackNavigator(
     },
     ProductNotFound: {
       screen: ProductNotFound,
+      navigationOptions: {
+        header: null,
+      },
+    },
+    GoogleLogin: {
+      screen: GoogleLogin,
       navigationOptions: {
         header: null,
       },

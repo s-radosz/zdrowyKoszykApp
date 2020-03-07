@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "513180813098",
+    "firebase_url": "https://zdrowykoszyk-8c1de.firebaseio.com",
+    "project_id": "zdrowykoszyk-8c1de",
+    "storage_bucket": "zdrowykoszyk-8c1de.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:513180813098:android:5a27cf1a12057fe013c053",
+        "android_client_info": {
+          "package_name": "com.zdrowykoszykapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "513180813098-56g6s86860u4giffgm137m7itms3ekej.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.zdrowykoszykapp",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "513180813098-j9craoej7c4sghhelguofue6js72g4lb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_2muaUNqku7p5QsaJu5BpudBGSEzz0CI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "513180813098-j9craoej7c4sghhelguofue6js72g4lb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

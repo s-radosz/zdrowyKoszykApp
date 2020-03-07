@@ -13,6 +13,8 @@ import ButtonRadius from './../../Components/ButtomRadius/ButtonRadius'
 const fullHeight = Dimensions.get('window').height
 
 const logo = require('./../../Assets/images/logo.png')
+const google = require('./../../Assets/images/google.png')
+const fb = require('./../../Assets/images/fb.png')
 
 const Welcome = props => {
   const navigation = props.navigation
@@ -27,6 +29,30 @@ const Welcome = props => {
               <Text style={styles.descriptionText}>Darmowy skaner</Text>
               <Text style={styles.descriptionText}>składu produktów</Text>
             </View>
+            {/* <View>
+              <Text style={styles.loginHeader}>Zaloguj się przez</Text>
+              <View style={styles.btnContainer}>
+                <TouchableOpacity
+                  style={styles.googleLogoContainer}
+                  onPress={() => navigation.navigate('GoogleLogin')}
+                >
+                  <Image
+                    style={styles.googleLogo}
+                    source={google}
+                    resizeMode="contain"
+                  />
+                </TouchableOpacity>
+
+                <Text style={styles.orText}>lub</Text>
+                <TouchableOpacity>
+                  <Image
+                    style={styles.fbLogo}
+                    source={fb}
+                    resizeMode="contain"
+                  />
+                </TouchableOpacity>
+              </View>
+            </View> */}
 
             <ButtonRadius
               text="Zaczynajmy"
@@ -108,6 +134,40 @@ const styles = StyleSheet.create({
     fontSize: 26,
     color: '#333',
     fontWeight: 'bold',
+  },
+  loginHeader: {
+    fontSize: 16,
+    color: '#333',
+    fontWeight: 'bold',
+    textAlign: 'center',
+    paddingBottom: 15,
+  },
+  googleLogoContainer: {
+    backgroundColor: '#fff',
+    width: 50,
+    height: 50,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 5,
+  },
+  googleLogo: {
+    width: 30,
+    height: 30,
+  },
+  fbLogo: {
+    width: 50,
+    height: 50,
+  },
+  btnContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    width: 150,
+  },
+  orText: {
+    color: '#333',
+    fontWeight: 'bold',
+    fontSize: 12,
   },
 })
 
