@@ -2,9 +2,9 @@ import { createAppContainer } from 'react-navigation'
 import React, { Component } from 'react'
 import { SafeAreaView } from 'react-native'
 import Welcome from '../Screen/Welcome/Welcome'
-import ScanBarcode from '../Screen/ScanBarcode/ScanBarcode'
+import Scan from '../Screen/Scan/Scan'
 import ProductDetails from './../Screen/ProductDetails/ProductDetails'
-import ProductNotFound from './../Screen/ProductNotFound/ProductNotFound'
+import ProductOrIngredientsNotFound from './../Screen/ProductOrIngredientsNotFound/ProductOrIngredientsNotFound'
 import GoogleLogin from './../Screen/GoogleLogin/GoogleLogin'
 import { GlobalContext } from './../Context/GlobalContext'
 import NavigationService from './NavigationService'
@@ -20,8 +20,8 @@ const MainStack = createStackNavigator(
         header: null,
       },
     },
-    ScanBarcode: {
-      screen: ScanBarcode,
+    Scan: {
+      screen: Scan,
       navigationOptions: {
         header: null,
       },
@@ -32,8 +32,8 @@ const MainStack = createStackNavigator(
         header: null,
       },
     },
-    ProductNotFound: {
-      screen: ProductNotFound,
+    ProductOrIngredientsNotFound: {
+      screen: ProductOrIngredientsNotFound,
       navigationOptions: {
         header: null,
       },

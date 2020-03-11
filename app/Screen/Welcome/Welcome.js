@@ -29,36 +29,11 @@ const Welcome = props => {
               <Text style={styles.descriptionText}>Darmowy skaner</Text>
               <Text style={styles.descriptionText}>składu produktów</Text>
             </View>
-            {/* <View>
-              <Text style={styles.loginHeader}>Zaloguj się przez</Text>
-              <View style={styles.btnContainer}>
-                <TouchableOpacity
-                  style={styles.googleLogoContainer}
-                  onPress={() => navigation.navigate('GoogleLogin')}
-                >
-                  <Image
-                    style={styles.googleLogo}
-                    source={google}
-                    resizeMode="contain"
-                  />
-                </TouchableOpacity>
-
-                <Text style={styles.orText}>lub</Text>
-                <TouchableOpacity>
-                  <Image
-                    style={styles.fbLogo}
-                    source={fb}
-                    resizeMode="contain"
-                  />
-                </TouchableOpacity>
-              </View>
-            </View> */}
-
             <ButtonRadius
               text="Zaczynajmy"
               backgroundColor="#5c8d89"
               textColor="#fff"
-              action={() => navigation.navigate('ScanBarcode')}
+              action={() => navigation.navigate('Scan')}
             />
           </View>
         </View>

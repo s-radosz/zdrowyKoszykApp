@@ -11,6 +11,7 @@ import {
 import Accordion from 'react-native-collapsible/Accordion'
 import * as Animatable from 'react-native-animatable'
 import ButtonRadius from './../../Components/ButtomRadius/ButtonRadius'
+import Header from "./../../Components/Header/Header"
 
 const fullHeight = Dimensions.get('screen').height
 
@@ -44,8 +45,8 @@ const ProductDetails = ({ navigation }) => {
           section.type === 'bad'
             ? styles.badIngredient
             : section.type === 'not good'
-            ? styles.notGoodIngredient
-            : section.type === 'good' && styles.goodIngredient,
+              ? styles.notGoodIngredient
+              : section.type === 'good' && styles.goodIngredient,
         ]}
         transition="backgroundColor"
       >
@@ -90,11 +91,7 @@ const ProductDetails = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
-      <View style={styles.titleContainer}>
-        <View style={styles.titleShadow}>
-          <Text style={styles.title}>{name}</Text>
-        </View>
-      </View>
+      <Header name={name} />
 
       <ScrollView style={styles.scrollContainer}>
         <Text style={styles.details}>{details}</Text>
@@ -131,33 +128,9 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     height: fullHeight - 25,
   },
-  titleContainer: {
-    overflow: 'hidden',
-    backgroundColor: '#fff',
-    paddingBottom: 10,
-  },
-  titleShadow: {
-    backgroundColor: '#fff',
-    shadowColor: '#000',
-    shadowOffset: { width: 1, height: 1 },
-    shadowOpacity: 0.4,
-    shadowRadius: 3,
-    elevation: 5,
-    borderBottomLeftRadius: 15,
-    borderBottomRightRadius: 15,
-  },
-  title: {
-    textAlign: 'center',
-    fontSize: 20,
-    fontWeight: 'bold',
-    paddingTop: 20,
-    paddingRight: 10,
-    paddingBottom: 20,
-    paddingLeft: 10,
-    color: '#333',
-  },
   scrollContainer: {
     backgroundColor: '#fff',
+    width: "100%"
   },
   details: {
     fontSize: 14,

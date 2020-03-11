@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
     paddingRight: 30,
     paddingLeft: 30,
     borderRadius: 30,
-    width: '65%',
+    width: '100%',
   },
   btnText: {
     fontSize: 18,
