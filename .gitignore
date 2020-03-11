@@ -59,3 +59,5 @@ buck-out/
 /ios/Pods/
 
 credentials.json
+
+android/java_pid17788.hprof
