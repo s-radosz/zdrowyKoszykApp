@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import {
   Text,
   View,
@@ -7,17 +7,26 @@ import {
   StyleSheet,
   Dimensions,
   TouchableOpacity,
+  Linking
 } from 'react-native'
 import ButtonRadius from './../../Components/ButtomRadius/ButtonRadius'
+import { GlobalContext } from "./../../Context/GlobalContext"
 
 const fullHeight = Dimensions.get('window').height
 
 const logo = require('./../../Assets/images/logo.png')
-const google = require('./../../Assets/images/google.png')
-const fb = require('./../../Assets/images/fb.png')
 
 const Welcome = props => {
   const navigation = props.navigation
+
+  const context = useContext(GlobalContext)
+
+  const handleLinkOpen = () => {
+    Linking.openURL(context.authorWebsite ?
+      context.authorWebsite :
+      "https://giphy.com/gifs/filmeditor-christmas-movies-macaulay-culkin-xUySTQZfdpSkIIg88M")
+      .catch(err => console.error("Couldn't load page", err));
+  }
 
   return (
     <SafeAreaView>
@@ -29,18 +38,23 @@ const Welcome = props => {
               <Text style={styles.descriptionText}>Darmowy skaner</Text>
               <Text style={styles.descriptionText}>składu produktów</Text>
             </View>
-            <ButtonRadius
-              text="Zaczynajmy"
-              backgroundColor="#5c8d89"
-              textColor="#fff"
-              action={() => navigation.navigate('Scan')}
-            />
+            <View style={styles.btnContainer}>
+              <ButtonRadius
+                text="Zaczynajmy"
+                backgroundColor="#5c8d89"
+                textColor="#fff"
+                action={() => navigation.navigate('Scan')}
+              />
+            </View>
+
           </View>
         </View>
         <View style={styles.bottomContainer}>
           <View style={styles.bottomShadow} />
           <View style={styles.bottomTextContainer}>
-            <Text style={styles.bottomText}>Created by Radosz Szymon</Text>
+            <TouchableOpacity onPress={() => handleLinkOpen()}>
+              <Text style={styles.bottomText}>Created by Radosz Szymon</Text>
+            </TouchableOpacity>
           </View>
         </View>
       </View>
@@ -110,29 +124,6 @@ const styles = StyleSheet.create({
     color: '#333',
     fontWeight: 'bold',
   },
-  loginHeader: {
-    fontSize: 16,
-    color: '#333',
-    fontWeight: 'bold',
-    textAlign: 'center',
-    paddingBottom: 15,
-  },
-  googleLogoContainer: {
-    backgroundColor: '#fff',
-    width: 50,
-    height: 50,
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderRadius: 5,
-  },
-  googleLogo: {
-    width: 30,
-    height: 30,
-  },
-  fbLogo: {
-    width: 50,
-    height: 50,
-  },
   btnContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -144,6 +135,9 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 12,
   },
+  btnContainer: {
+    width: "80%"
+  }
 })
 
 export default Welcome

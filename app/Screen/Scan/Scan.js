@@ -5,6 +5,7 @@ import axios from 'axios'
 import { GlobalContext } from './../../Context/GlobalContext'
 import { NavigationEvents } from 'react-navigation'
 import ButtonRadius from './../../Components/ButtomRadius/ButtonRadius'
+import { TouchableOpacity } from 'react-native-gesture-handler'
 
 const ScanBarcode = ({ navigation }) => {
   let cameraRef = null
@@ -61,8 +62,6 @@ const ScanBarcode = ({ navigation }) => {
   const textRecognized = object => {
     const { textBlocks } = object;
 
-    //this.setState({ textBlocks });
-
     let details = "";
     let foundHeaderId = 0;
 
@@ -97,6 +96,18 @@ const ScanBarcode = ({ navigation }) => {
       }
     })
   };
+
+  const handleIngredientsNotFound = () => {
+    const { params } = navigation.state
+    let barcode = params ? params.barcode : null
+    let name = params ? params.name : null
+
+    navigation.navigate('ProductOrIngredientsNotFound', {
+      barcode: barcode,
+      name: name,
+      details: ""
+    })
+  }
 
   const handleBarcodeScan = scanResult => {
     if (scanResult.data != null) {
@@ -146,7 +157,7 @@ const ScanBarcode = ({ navigation }) => {
         />
         <Text style={styles.descriptionText}>
           {scanText ?
-            "Nakieruj kamera na sklad i kliknij przycisk" :
+            "Nie znaleziono produktu. \n Nakieruj kamerę na skład, naciśnij przycisk i przytrzymaj kamerę na składzie" :
             "Nakieruj kamerą na kod kreskowy"}
         </Text>
         <View style={[{ flex: 30 }, styles.maskCenter]}>
@@ -154,17 +165,29 @@ const ScanBarcode = ({ navigation }) => {
           <View style={styles.maskInner} />
           <View style={[{ width: maskColWidth }, styles.maskFrame]} />
         </View>
+        <View style={styles.btnContainer}>
+          <View style={styles.btnWrapper}>
+            {scanText &&
+              <ButtonRadius
+                text={allowScanText ? "Przetwarzanie składu ..." : "Skanuj skład"}
+                backgroundColor="#5c8d89"
+                textColor="#fff"
+                action={() => setAllowScanText(true)}
+              />
+            }
+
+            {allowScanText &&
+              <TouchableOpacity
+                style={styles.troubleBtn}
+                onPress={() => handleIngredientsNotFound()}>
+                <Text style={styles.troubleText}>{`Problem z odczytaniem składu? \nWprowadź ręcznie`}</Text>
+              </TouchableOpacity>}
+          </View>
+        </View>
+
         <View
           style={[{ flex: maskRowHeight }, styles.maskRow, styles.maskFrame]}
         />
-        {scanText &&
-          <ButtonRadius
-            text="Skanuj sklad"
-            backgroundColor="#5c8d89"
-            textColor="#fff"
-            action={() => setAllowScanText(true)}
-          />
-        }
       </View>
     </View>
   )
@@ -208,6 +231,27 @@ const styles = StyleSheet.create({
     paddingBottom: 50,
     backgroundColor: 'rgba(1,1,1,0.95)',
     width: '100%',
+    paddingLeft: "10%",
+    paddingRight: "10%",
     textAlign: 'center',
   },
+  btnContainer: {
+    backgroundColor: 'rgba(1,1,1,0.95)',
+    width: "100%",
+    paddingTop: 50
+  },
+  btnWrapper: {
+    width: "80%",
+    marginLeft: "auto",
+    marginRight: "auto"
+  },
+  troubleText: {
+    color: "#fff",
+    fontSize: 14,
+    textAlign: "center",
+    textDecorationLine: "underline"
+  },
+  troubleBtn: {
+    marginTop: 15
+  }
 })

@@ -5,10 +5,9 @@ import Welcome from '../Screen/Welcome/Welcome'
 import Scan from '../Screen/Scan/Scan'
 import ProductDetails from './../Screen/ProductDetails/ProductDetails'
 import ProductOrIngredientsNotFound from './../Screen/ProductOrIngredientsNotFound/ProductOrIngredientsNotFound'
-import GoogleLogin from './../Screen/GoogleLogin/GoogleLogin'
 import { GlobalContext } from './../Context/GlobalContext'
 import NavigationService from './NavigationService'
-import { ifIphoneX } from 'react-native-iphone-x-helper'
+import Alert from "./../Components/Alert/Alert"
 
 import { createStackNavigator } from 'react-navigation-stack'
 
@@ -38,16 +37,9 @@ const MainStack = createStackNavigator(
         header: null,
       },
     },
-    GoogleLogin: {
-      screen: GoogleLogin,
-      navigationOptions: {
-        header: null,
-      },
-    },
   },
   {
     initialRouteName: 'Welcome',
-    // transitionConfig: () => fadeIn(),
     headerMode: 'none',
   },
 )
@@ -62,9 +54,8 @@ export default class App extends Component {
       alertMessage: '',
       alertType: '',
       API_URL: 'http://zdrowy-koszyk.live/api/',
-      //API_URL: "http://10.0.2.2:8000/",
-      //API_URL: "https://e-mamy.pl/",
       showLoader: false,
+      authorWebsite: "https://tech-bulb.com/"
     }
   }
   setShowLoader = param => {
@@ -100,7 +91,7 @@ export default class App extends Component {
       alertMessage,
       API_URL,
       showLoader,
-      productDetails,
+      authorWebsite,
     } = this.state
 
     return (
@@ -115,6 +106,7 @@ export default class App extends Component {
           setShowLoader: this.setShowLoader,
           closeAlert: this.closeAlert,
           NavigationService: NavigationService,
+          authorWebsite: authorWebsite
         }}
       >
         <SafeAreaView
@@ -123,7 +115,13 @@ export default class App extends Component {
             backgroundColor: '#fff',
           }}
         >
-          {/*<StatusBar backgroundColor="#f4a157" barStyle="light-content" />*/}
+          {showAlert &&
+            <Alert
+              alertType={alertType}
+              alertMessage={alertMessage}
+              closeAlert={() => this.closeAlert()}
+            />
+          }
           <AppContainer
             ref={navigatorRef => {
               NavigationService.setTopLevelNavigator(navigatorRef)

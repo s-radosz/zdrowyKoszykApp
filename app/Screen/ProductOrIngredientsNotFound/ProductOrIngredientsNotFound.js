@@ -38,11 +38,15 @@ const ProductOrIngredientsNotFound = ({ navigation }) => {
         .then(res => {
           console.log(['rsp', res.data])
 
+          context.setAlert(true, "success", "Produkt został wysłany do weryfikacji.")
+
           navigation.navigate('Welcome', {})
         })
         .catch(err => {
           console.log(['err', err])
         })
+    } else {
+      context.setAlert(true, "danger", "Wszystkie pola są wymagane.")
     }
   }
 
@@ -58,7 +62,7 @@ const ProductOrIngredientsNotFound = ({ navigation }) => {
           onChangeText={text => setName(text)}
           value={name}
           underlineColorAndroid="transparent"
-          placeholder="Wpisz nazwę produktu"
+          placeholder="Wpisz nazwę produktu *"
           placeholderTextColor="grey"
         />
 
@@ -69,7 +73,7 @@ const ProductOrIngredientsNotFound = ({ navigation }) => {
           onChangeText={text => setDetails(text)}
           value={details}
           underlineColorAndroid="transparent"
-          placeholder="Wpisz skład produktu"
+          placeholder="Wpisz skład produktu *"
           placeholderTextColor="grey"
         />
 

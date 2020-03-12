@@ -5,9 +5,10 @@ export const GlobalContext = React.createContext({
   alertType: '',
   alertMessage: '',
   API_URL: '',
-  setAlert: (showAlert, alertType, alertMessage) => {},
-  closeAlert: () => {},
+  setAlert: (showAlert, alertType, alertMessage) => { },
+  closeAlert: () => { },
   showLoader: false,
-  setShowLoader: param => {},
-  NavigationService: () => {},
+  setShowLoader: param => { },
+  NavigationService: () => { },
+  authorWebsite: ""
 })
