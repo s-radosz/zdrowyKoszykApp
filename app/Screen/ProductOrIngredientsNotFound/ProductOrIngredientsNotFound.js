@@ -1,14 +1,14 @@
 import React, { useEffect, useState, useContext } from 'react'
 import { View, StyleSheet, TextInput } from 'react-native'
-import Header from "./../../Components/Header/Header"
-import ButtonRadius from "./../../Components/ButtomRadius/ButtonRadius"
+import Header from './../../Components/Header/Header'
+import ButtonRadius from './../../Components/ButtomRadius/ButtonRadius'
 import { GlobalContext } from './../../Context/GlobalContext'
-import axios from "axios"
+import axios from 'axios'
 
 const ProductOrIngredientsNotFound = ({ navigation }) => {
-  const [barcode, setBarcode] = useState("");
-  const [name, setName] = useState("")
-  const [details, setDetails] = useState("")
+  const [barcode, setBarcode] = useState('')
+  const [name, setName] = useState('')
+  const [details, setDetails] = useState('')
 
   const context = useContext(GlobalContext)
 
@@ -20,7 +20,7 @@ const ProductOrIngredientsNotFound = ({ navigation }) => {
 
     console.log(barcode, name, details)
 
-    setBarcode(barcode);
+    setBarcode(barcode)
     setName(name)
     setDetails(details)
   }, [navigation.state])
@@ -33,12 +33,16 @@ const ProductOrIngredientsNotFound = ({ navigation }) => {
         .post(`${context.API_URL}product-to-accept/new`, {
           name: name,
           barcode: barcode,
-          details: details
+          details: details,
         })
         .then(res => {
           console.log(['rsp', res.data])
 
-          context.setAlert(true, "success", "Produkt został wysłany do weryfikacji.")
+          context.setAlert(
+            true,
+            'success',
+            'Produkt został wysłany do weryfikacji.',
+          )
 
           navigation.navigate('Welcome', {})
         })
@@ -46,7 +50,7 @@ const ProductOrIngredientsNotFound = ({ navigation }) => {
           console.log(['err', err])
         })
     } else {
-      context.setAlert(true, "danger", "Wszystkie pola są wymagane.")
+      context.setAlert(true, 'danger', 'Wszystkie pola są wymagane.')
     }
   }
 
@@ -92,10 +96,10 @@ export default ProductOrIngredientsNotFound
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff"
+    backgroundColor: '#fff',
   },
   nameInput: {
-    height: 80
+    height: 80,
   },
   textArea: {
     height: 250,
@@ -104,7 +108,7 @@ const styles = StyleSheet.create({
   contextContainer: {
     paddingTop: 20,
     paddingLeft: 20,
-    paddingRight: 20
+    paddingRight: 20,
   },
   input: {
     borderColor: 'gray',
@@ -112,6 +116,6 @@ const styles = StyleSheet.create({
     padding: 16,
     fontSize: 16,
     borderRadius: 5,
-    marginBottom: 15
-  }
+    marginBottom: 15,
+  },
 })

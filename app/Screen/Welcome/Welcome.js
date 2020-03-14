@@ -7,10 +7,10 @@ import {
   StyleSheet,
   Dimensions,
   TouchableOpacity,
-  Linking
+  Linking,
 } from 'react-native'
 import ButtonRadius from './../../Components/ButtomRadius/ButtonRadius'
-import { GlobalContext } from "./../../Context/GlobalContext"
+import { GlobalContext } from './../../Context/GlobalContext'
 
 const fullHeight = Dimensions.get('window').height
 
@@ -22,10 +22,11 @@ const Welcome = props => {
   const context = useContext(GlobalContext)
 
   const handleLinkOpen = () => {
-    Linking.openURL(context.authorWebsite ?
-      context.authorWebsite :
-      "https://giphy.com/gifs/filmeditor-christmas-movies-macaulay-culkin-xUySTQZfdpSkIIg88M")
-      .catch(err => console.error("Couldn't load page", err));
+    Linking.openURL(
+      context.authorWebsite
+        ? context.authorWebsite
+        : 'https://giphy.com/gifs/filmeditor-christmas-movies-macaulay-culkin-xUySTQZfdpSkIIg88M',
+    ).catch(err => console.error("Couldn't load page", err))
   }
 
   return (
@@ -46,7 +47,6 @@ const Welcome = props => {
                 action={() => navigation.navigate('Scan')}
               />
             </View>
-
           </View>
         </View>
         <View style={styles.bottomContainer}>
@@ -128,16 +128,13 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    width: 150,
+    width: '80%',
   },
   orText: {
     color: '#333',
     fontWeight: 'bold',
     fontSize: 12,
   },
-  btnContainer: {
-    width: "80%"
-  }
 })
 
 export default Welcome

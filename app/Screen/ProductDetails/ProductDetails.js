@@ -11,7 +11,7 @@ import {
 import Accordion from 'react-native-collapsible/Accordion'
 import * as Animatable from 'react-native-animatable'
 import ButtonRadius from './../../Components/ButtomRadius/ButtonRadius'
-import Header from "./../../Components/Header/Header"
+import Header from './../../Components/Header/Header'
 
 const fullHeight = Dimensions.get('screen').height
 
@@ -45,8 +45,8 @@ const ProductDetails = ({ navigation }) => {
           section.type === 'bad'
             ? styles.badIngredient
             : section.type === 'not good'
-              ? styles.notGoodIngredient
-              : section.type === 'good' && styles.goodIngredient,
+            ? styles.notGoodIngredient
+            : section.type === 'good' && styles.goodIngredient,
         ]}
         transition="backgroundColor"
       >
@@ -113,7 +113,7 @@ const ProductDetails = ({ navigation }) => {
           text="Skanuj kolejny"
           backgroundColor="#5c8d89"
           textColor="#fff"
-          action={() => navigation.navigate('ScanBarcode')}
+          action={() => navigation.navigate('Scan')}
         />
       </View>
     </View>
@@ -130,7 +130,7 @@ const styles = StyleSheet.create({
   },
   scrollContainer: {
     backgroundColor: '#fff',
-    width: "100%"
+    width: '100%',
   },
   details: {
     fontSize: 14,
@@ -228,6 +228,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     paddingTop: 12,
     paddingBottom: 10,
+    paddingLeft: '10%',
+    paddingRight: '10%',
     backgroundColor: '#fff',
   },
 })

@@ -7,7 +7,7 @@ import ProductDetails from './../Screen/ProductDetails/ProductDetails'
 import ProductOrIngredientsNotFound from './../Screen/ProductOrIngredientsNotFound/ProductOrIngredientsNotFound'
 import { GlobalContext } from './../Context/GlobalContext'
 import NavigationService from './NavigationService'
-import Alert from "./../Components/Alert/Alert"
+import Alert from './../Components/Alert/Alert'
 
 import { createStackNavigator } from 'react-navigation-stack'
 
@@ -55,7 +55,7 @@ export default class App extends Component {
       alertType: '',
       API_URL: 'http://zdrowy-koszyk.live/api/',
       showLoader: false,
-      authorWebsite: "https://tech-bulb.com/"
+      authorWebsite: 'https://tech-bulb.com/',
     }
   }
   setShowLoader = param => {
@@ -106,7 +106,7 @@ export default class App extends Component {
           setShowLoader: this.setShowLoader,
           closeAlert: this.closeAlert,
           NavigationService: NavigationService,
-          authorWebsite: authorWebsite
+          authorWebsite: authorWebsite,
         }}
       >
         <SafeAreaView
@@ -115,13 +115,13 @@ export default class App extends Component {
             backgroundColor: '#fff',
           }}
         >
-          {showAlert &&
+          {showAlert && (
             <Alert
               alertType={alertType}
               alertMessage={alertMessage}
               closeAlert={() => this.closeAlert()}
             />
-          }
+          )}
           <AppContainer
             ref={navigatorRef => {
               NavigationService.setTopLevelNavigator(navigatorRef)

@@ -6,6 +6,7 @@ import { GlobalContext } from './../../Context/GlobalContext'
 import { NavigationEvents } from 'react-navigation'
 import ButtonRadius from './../../Components/ButtomRadius/ButtonRadius'
 import { TouchableOpacity } from 'react-native-gesture-handler'
+import DeviceInfo from 'react-native-device-info'
 
 const ScanBarcode = ({ navigation }) => {
   let cameraRef = null
@@ -15,7 +16,7 @@ const ScanBarcode = ({ navigation }) => {
     flashMode: RNCamera.Constants.FlashMode.auto,
   })
   const [allowScanBarcode, setAllowScanBarcode] = useState(true)
-  const [scanText, setScanText] = useState(false);
+  const [scanText, setScanText] = useState(false)
   const [allowScanText, setAllowScanText] = useState(false)
 
   const context = useContext(GlobalContext)
@@ -29,28 +30,42 @@ const ScanBarcode = ({ navigation }) => {
 
     //in view with detect text disable camera and wait to push button
     if (barcode || name) {
-      setAllowScanBarcode(false);
+      setAllowScanBarcode(false)
       setScanText(true)
     }
   }, [navigation.state])
 
-  const searchProduct = barcode => {
-    console.log(['link', `${context.API_URL}product/find/${barcode}`])
+  const searchProduct = (barcode, deviceId, deviceBrand) => {
+    // console.log([
+    //   'link',
+    //   `${context.API_URL}product/find/${barcode}/${deviceId ? deviceId : ''}/${
+    //     deviceBrand ? deviceBrand : ''
+    //   }`,
+    // ])
     axios
-      .get(`${context.API_URL}product/find/${barcode}`)
+      .get(
+        `${context.API_URL}product/find/${barcode}/${
+          deviceId ? deviceId : ''
+        }/${deviceBrand ? deviceBrand : ''}`,
+      )
       .then(res => {
-        console.log(['rsp', res.data])
+        //console.log(['rsp', res.data])
 
-        if (res.data.status === 'OK' && res.data.result && res.data.result.details) {
+        if (
+          res.data.status === 'OK' &&
+          res.data.result &&
+          res.data.result.details
+        ) {
           navigation.navigate('ProductDetails', {
             productDetails: res.data,
           })
         } else {
           navigation.navigate('Scan', {
             barcode: barcode,
-            name: res.data &&
-              res.data.result &&
-              res.data.result.name ? res.data.result.name : null
+            name:
+              res.data && res.data.result && res.data.result.name
+                ? res.data.result.name
+                : null,
           })
         }
       })
@@ -60,42 +75,44 @@ const ScanBarcode = ({ navigation }) => {
   }
 
   const textRecognized = object => {
-    const { textBlocks } = object;
+    const { textBlocks } = object
 
-    let details = "";
-    let foundHeaderId = 0;
+    let details = ''
+    let foundHeaderId = 0
 
-    textBlocks && textBlocks.length > 0 && textBlocks.map((block, i) => {
-      //console.log(["block", block.value, i])
+    textBlocks &&
+      textBlocks.length > 0 &&
+      textBlocks.map((block, i) => {
+        //console.log(["block", block.value, i])
 
-      if (block.value && (
-        block.value.includes("Sktadniki:") ||
-        block.value.includes("Skład:") ||
-        block.value.includes("Składniki:") ||
-        block.value.includes("Stlad:")
-      )) {
-        //console.log(["text", block.value])
-        console.log("skladniki", i, foundHeaderId, block.value)
+        if (
+          block.value &&
+          (block.value.includes('Sktadniki:') ||
+            block.value.includes('Skład:') ||
+            block.value.includes('Składniki:') ||
+            block.value.includes('Stlad:'))
+        ) {
+          //console.log(["text", block.value])
+          //console.log('skladniki', i, foundHeaderId, block.value)
 
-        details.concat(block.value)
-        foundHeaderId = i + 1;
+          details.concat(block.value)
+          foundHeaderId = i + 1
+        } else if (foundHeaderId !== 0 && i === foundHeaderId) {
+          console.log('i', i, foundHeaderId, block.value)
+          setAllowScanText(false)
 
-      } else if (foundHeaderId !== 0 && i === foundHeaderId) {
-        console.log("i", i, foundHeaderId, block.value)
-        setAllowScanText(false);
+          const { params } = navigation.state
+          let barcode = params ? params.barcode : null
+          let name = params ? params.name : null
 
-        const { params } = navigation.state
-        let barcode = params ? params.barcode : null
-        let name = params ? params.name : null
-
-        navigation.navigate('ProductOrIngredientsNotFound', {
-          barcode: barcode,
-          name: name,
-          details: details.concat(block.value)
-        })
-      }
-    })
-  };
+          navigation.navigate('ProductOrIngredientsNotFound', {
+            barcode: barcode,
+            name: name,
+            details: details.concat(block.value),
+          })
+        }
+      })
+  }
 
   const handleIngredientsNotFound = () => {
     const { params } = navigation.state
@@ -105,30 +122,36 @@ const ScanBarcode = ({ navigation }) => {
     navigation.navigate('ProductOrIngredientsNotFound', {
       barcode: barcode,
       name: name,
-      details: ""
+      details: '',
     })
   }
 
   const handleBarcodeScan = scanResult => {
+    let deviceId = DeviceInfo.getDeviceId()
+    let brand = DeviceInfo.getBrand()
+
+    DeviceInfo.getDeviceId()
     if (scanResult.data != null) {
       setAllowScanBarcode(false)
       let barcode = scanResult.data
-      console.warn(['scanned', scanResult.data])
-      searchProduct(barcode)
+      //console.warn(['scanned', scanResult.data])
+      searchProduct(barcode, deviceId, brand)
     }
     return
   }
 
-  const { height, width } = Dimensions.get('window')
+  const { width } = Dimensions.get('window')
   const maskRowHeight = 50
   const maskColWidth = (width - 300) / 2
 
   return (
     <View style={styles.container}>
-      <NavigationEvents onDidFocus={() => {
-        setAllowScanBarcode(true)
-        setAllowScanText(false)
-      }} />
+      <NavigationEvents
+        onDidFocus={() => {
+          setAllowScanBarcode(true)
+          setAllowScanText(false)
+        }}
+      />
       <RNCamera
         ref={ref => {
           cameraRef = ref
@@ -141,13 +164,13 @@ const ScanBarcode = ({ navigation }) => {
             handleBarcodeScan(e)
           }
         }}
-        onFocusChanged={() => { }}
-        onZoomChanged={() => { }}
+        onFocusChanged={() => {}}
+        onZoomChanged={() => {}}
         permissionDialogTitle={'Permission to use camera'}
         permissionDialogMessage={
           'We need your permission to use your camera phone'
         }
-        onTextRecognized={(e) => allowScanText ? textRecognized(e) : null}
+        onTextRecognized={e => (allowScanText ? textRecognized(e) : null)}
         style={styles.preview}
         type={camera.type}
       />
@@ -156,9 +179,9 @@ const ScanBarcode = ({ navigation }) => {
           style={[{ flex: maskRowHeight }, styles.maskRow, styles.maskFrame]}
         />
         <Text style={styles.descriptionText}>
-          {scanText ?
-            "Nie znaleziono produktu. \n Nakieruj kamerę na skład, naciśnij przycisk i przytrzymaj kamerę na składzie" :
-            "Nakieruj kamerą na kod kreskowy"}
+          {scanText
+            ? 'Nie znaleziono produktu. \n Nakieruj kamerę na skład, naciśnij przycisk i przytrzymaj kamerę na składzie'
+            : 'Nakieruj kamerą na kod kreskowy'}
         </Text>
         <View style={[{ flex: 30 }, styles.maskCenter]}>
           <View style={[{ width: maskColWidth }, styles.maskFrame]} />
@@ -167,21 +190,27 @@ const ScanBarcode = ({ navigation }) => {
         </View>
         <View style={styles.btnContainer}>
           <View style={styles.btnWrapper}>
-            {scanText &&
+            {scanText && (
               <ButtonRadius
-                text={allowScanText ? "Przetwarzanie składu ..." : "Skanuj skład"}
+                text={
+                  allowScanText ? 'Przetwarzanie składu ...' : 'Skanuj skład'
+                }
                 backgroundColor="#5c8d89"
                 textColor="#fff"
                 action={() => setAllowScanText(true)}
               />
-            }
+            )}
 
-            {allowScanText &&
+            {allowScanText && (
               <TouchableOpacity
                 style={styles.troubleBtn}
-                onPress={() => handleIngredientsNotFound()}>
-                <Text style={styles.troubleText}>{`Problem z odczytaniem składu? \nWprowadź ręcznie`}</Text>
-              </TouchableOpacity>}
+                onPress={() => handleIngredientsNotFound()}
+              >
+                <Text
+                  style={styles.troubleText}
+                >{`Problem z odczytaniem składu? \nWprowadź ręcznie`}</Text>
+              </TouchableOpacity>
+            )}
           </View>
         </View>
 
@@ -231,27 +260,27 @@ const styles = StyleSheet.create({
     paddingBottom: 50,
     backgroundColor: 'rgba(1,1,1,0.95)',
     width: '100%',
-    paddingLeft: "10%",
-    paddingRight: "10%",
+    paddingLeft: '10%',
+    paddingRight: '10%',
     textAlign: 'center',
   },
   btnContainer: {
     backgroundColor: 'rgba(1,1,1,0.95)',
-    width: "100%",
-    paddingTop: 50
+    width: '100%',
+    paddingTop: 50,
   },
   btnWrapper: {
-    width: "80%",
-    marginLeft: "auto",
-    marginRight: "auto"
+    width: '80%',
+    marginLeft: 'auto',
+    marginRight: 'auto',
   },
   troubleText: {
-    color: "#fff",
+    color: '#fff',
     fontSize: 14,
-    textAlign: "center",
-    textDecorationLine: "underline"
+    textAlign: 'center',
+    textDecorationLine: 'underline',
   },
   troubleBtn: {
-    marginTop: 15
-  }
+    marginTop: 15,
+  },
 })
