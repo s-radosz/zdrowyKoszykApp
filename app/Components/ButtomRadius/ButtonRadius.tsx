@@ -1,11 +1,23 @@
 import React from 'react'
 import { Text, TouchableOpacity, StyleSheet } from 'react-native'
 
-const ButtonRadius = ({ text, backgroundColor, textColor, action }) => {
+type ButtonRadiusProps = {
+  text: string
+  backgroundColor: string
+  textColor: string
+  action: any
+}
+
+const ButtonRadius = ({
+  text,
+  backgroundColor,
+  textColor,
+  action,
+}: ButtonRadiusProps) => {
   return (
     <TouchableOpacity
       style={[styles.btnContainer, { backgroundColor: backgroundColor }]}
-      onPress={() => action()}
+      onPress={action}
     >
       <Text style={[styles.btnText, { color: textColor }]}>{text}</Text>
     </TouchableOpacity>

@@ -511,6 +511,8 @@ PODS:
     - React-perflogger (= 0.72.4)
   - RNCMaskedView (0.1.11):
     - React
+  - RNDeviceInfo (10.11.0):
+    - React-Core
   - RNGestureHandler (1.10.3):
     - React-Core
   - RNGoogleSignin (3.0.4):
@@ -591,6 +593,7 @@ DEPENDENCIES:
   - React-utils (from `../node_modules/react-native/ReactCommon/react/utils`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
   - "RNCMaskedView (from `../node_modules/@react-native-community/masked-view`)"
+  - RNDeviceInfo (from `../node_modules/react-native-device-info`)
   - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
   - "RNGoogleSignin (from `../node_modules/@react-native-community/google-signin`)"
   - RNReanimated (from `../node_modules/react-native-reanimated`)
@@ -702,6 +705,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon"
   RNCMaskedView:
     :path: "../node_modules/@react-native-community/masked-view"
+  RNDeviceInfo:
+    :path: "../node_modules/react-native-device-info"
   RNGestureHandler:
     :path: "../node_modules/react-native-gesture-handler"
   RNGoogleSignin:
@@ -771,6 +776,7 @@ SPEC CHECKSUMS:
   React-utils: b79f2411931f9d3ea5781404dcbb2fa8a837e13a
   ReactCommon: 4b2bdcb50a3543e1c2b2849ad44533686610826d
   RNCMaskedView: 0e1bc4bfa8365eba5fbbb71e07fbdc0555249489
+  RNDeviceInfo: bf8a32acbcb875f568217285d1793b0e8588c974
   RNGestureHandler: a479ebd5ed4221a810967000735517df0d2db211
   RNGoogleSignin: a00f87261ea13df9a5cea8deafa6927d6f2c3562
   RNReanimated: c1b56d030d1616239861534d9adb531f8cffab68

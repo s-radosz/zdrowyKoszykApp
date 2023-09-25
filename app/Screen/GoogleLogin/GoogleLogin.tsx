@@ -1,19 +1,12 @@
 import React, { Component } from 'react'
-import {
-  AppRegistry,
-  StyleSheet,
-  Text,
-  View,
-  Alert,
-  Button,
-} from 'react-native'
+import { StyleSheet, Text, View, Alert, Button } from 'react-native'
 import {
   GoogleSignin,
   GoogleSigninButton,
   statusCodes,
 } from '@react-native-community/google-signin'
 
-class GoogleSigninSampleApp extends Component {
+class GoogleLogin extends Component {
   state = {
     userInfo: null,
     error: null,
@@ -38,11 +31,11 @@ class GoogleSigninSampleApp extends Component {
 
       console.log(['userInfo', userInfo])
       this.setState({ userInfo, error: null })
-    } catch (error) {
+    } catch (error: any) {
       const errorMessage =
-        error.code === statusCodes.SIGN_IN_REQUIRED
+        error?.code === statusCodes?.SIGN_IN_REQUIRED
           ? 'Please sign in :)'
-          : error.message
+          : error?.message
       this.setState({
         error: new Error(errorMessage),
       })
@@ -104,7 +97,7 @@ class GoogleSigninSampleApp extends Component {
     )
   }
 
-  renderUserInfo(userInfo) {
+  renderUserInfo(userInfo: any) {
     return (
       <View style={styles.container}>
         <Text style={styles.userInfo}>Welcome {userInfo.user.name}</Text>
@@ -120,7 +113,8 @@ class GoogleSigninSampleApp extends Component {
       <View style={styles.container}>
         <GoogleSigninButton
           size={GoogleSigninButton.Size.Standard}
-          color={GoogleSigninButton.Color.Auto}
+          // color={GoogleSigninButton.Color.Auto}
+          color={GoogleSigninButton.Color.Light}
           onPress={this._signIn}
         />
         {this.renderError()}
@@ -133,6 +127,7 @@ class GoogleSigninSampleApp extends Component {
     if (!error) {
       return null
     }
+    // @ts-ignore
     const text = `${error.toString()} ${error.code ? error.code : ''}`
     return <Text>{text}</Text>
   }
@@ -142,7 +137,7 @@ class GoogleSigninSampleApp extends Component {
       await GoogleSignin.hasPlayServices()
       const userInfo = await GoogleSignin.signIn()
       this.setState({ userInfo, error: null })
-    } catch (error) {
+    } catch (error: any) {
       console.log(['error', error])
       if (error.code === statusCodes.SIGN_IN_CANCELLED) {
         // sign in was cancelled
@@ -194,4 +189,4 @@ const styles = StyleSheet.create({
   userInfo: { fontSize: 18, fontWeight: 'bold', marginBottom: 20 },
   pageContainer: { flex: 1 },
 })
-export default GoogleSigninSampleApp
+export default GoogleLogin

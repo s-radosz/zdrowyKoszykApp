@@ -8,6 +8,6 @@ export const GlobalContext = React.createContext({
   setAlert: (showAlert, alertType, alertMessage) => {},
   closeAlert: () => {},
   showLoader: false,
-  setShowLoader: param => {},
+  setShowLoader: (param) => {},
   NavigationService: () => {},
 })

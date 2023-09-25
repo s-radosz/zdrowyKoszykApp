@@ -6,42 +6,44 @@ import ScanBarcode from '../Screen/ScanBarcode/ScanBarcode'
 import ProductDetails from './../Screen/ProductDetails/ProductDetails'
 import ProductNotFound from './../Screen/ProductNotFound/ProductNotFound'
 import GoogleLogin from './../Screen/GoogleLogin/GoogleLogin'
+// @ts-ignore
 import { GlobalContext } from './../Context/GlobalContext'
 import NavigationService from './NavigationService'
-import { ifIphoneX } from 'react-native-iphone-x-helper'
+// import { ifIphoneX } from 'react-native-iphone-x-helper'
 
 import { createStackNavigator } from 'react-navigation-stack'
+import { API_URL as API_URL_ENV } from '../../.env.config'
 
 const MainStack = createStackNavigator(
   {
     Welcome: {
       screen: Welcome,
       navigationOptions: {
-        header: null,
+        headerShown: false,
       },
     },
     ScanBarcode: {
       screen: ScanBarcode,
       navigationOptions: {
-        header: null,
+        headerShown: false,
       },
     },
     ProductDetails: {
       screen: ProductDetails,
       navigationOptions: {
-        header: null,
+        headerShown: false,
       },
     },
     ProductNotFound: {
       screen: ProductNotFound,
       navigationOptions: {
-        header: null,
+        headerShown: false,
       },
     },
     GoogleLogin: {
       screen: GoogleLogin,
       navigationOptions: {
-        header: null,
+        headerShown: false,
       },
     },
   },
@@ -55,25 +57,23 @@ const MainStack = createStackNavigator(
 const AppContainer = createAppContainer(MainStack)
 
 export default class App extends Component {
-  constructor(props) {
+  constructor(props: any) {
     super(props)
     this.state = {
       showAlert: false,
       alertMessage: '',
       alertType: '',
-      API_URL: 'http://zdrowy-koszyk.live/api/',
-      //API_URL: "http://10.0.2.2:8000/",
-      //API_URL: "https://e-mamy.pl/",
+      API_URL: API_URL_ENV,
       showLoader: false,
     }
   }
-  setShowLoader = param => {
+  setShowLoader = (param: boolean) => {
     this.setState({
       showLoader: param,
     })
   }
 
-  setAlert = (showAlert, alertType, alertMessage) => {
+  setAlert = (showAlert: boolean, alertType: string, alertMessage: string) => {
     this.setState({
       showAlert: showAlert,
       alertType: alertType,
@@ -95,12 +95,18 @@ export default class App extends Component {
 
   render() {
     const {
+      // @ts-ignore
       showAlert,
+      // @ts-ignore
       alertType,
+      // @ts-ignore
       alertMessage,
+      // @ts-ignore
       API_URL,
+      // @ts-ignore
       showLoader,
-      productDetails,
+      // @ts-ignore
+      // productDetails,
     } = this.state
 
     return (
@@ -114,6 +120,7 @@ export default class App extends Component {
           showLoader: showLoader,
           setShowLoader: this.setShowLoader,
           closeAlert: this.closeAlert,
+          // @ts-ignore
           NavigationService: NavigationService,
         }}
       >
@@ -125,9 +132,10 @@ export default class App extends Component {
         >
           {/*<StatusBar backgroundColor="#f4a157" barStyle="light-content" />*/}
           <AppContainer
-            ref={navigatorRef => {
+            ref={(navigatorRef) => {
               NavigationService.setTopLevelNavigator(navigatorRef)
             }}
+            // @ts-ignore
             alertType={alertType}
             alertMessage={alertMessage}
             closeAlert={this.closeAlert}

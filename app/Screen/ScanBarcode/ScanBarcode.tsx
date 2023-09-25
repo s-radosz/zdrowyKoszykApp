@@ -1,26 +1,54 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, useRef, useEffect } from 'react'
 import { Text, View, StyleSheet, Dimensions } from 'react-native'
 import { RNCamera } from 'react-native-camera'
 import axios from 'axios'
+// @ts-ignore
 import { GlobalContext } from './../../Context/GlobalContext'
 import { NavigationEvents } from 'react-navigation'
+import DeviceInfo from 'react-native-device-info'
 
-const ScanBarcode = ({ navigation }) => {
-  let cameraRef = null
+type ScanBarcodeProps = {
+  navigation: any
+}
 
-  const [camera, setCamera] = useState({
+const ScanBarcode = ({ navigation }: ScanBarcodeProps) => {
+  let cameraRef = useRef(null)
+
+  // const [camera, setCamera] = useState({
+  //   type: RNCamera.Constants.Type.back,
+  //   flashMode: RNCamera.Constants.FlashMode.auto,
+  // })
+  const camera = {
     type: RNCamera.Constants.Type.back,
     flashMode: RNCamera.Constants.FlashMode.auto,
-  })
+  }
   const [scan, setScan] = useState(true)
 
-  const context = useContext(GlobalContext)
+  const context = useContext(GlobalContext) as any
 
-  const searchProduct = barcode => {
-    console.log(['link', `${context.API_URL}product/find/${barcode}`])
+  //test scan on simulator
+  useEffect(() => {
+    let isSimulator = DeviceInfo.isEmulator()
+
+    // @ts-ignore
+    if (isSimulator) {
+      console.log(['isSimulator', isSimulator])
+      setTimeout(() => {
+        searchProduct('8710449944194')
+      }, 3000)
+    }
+  }, [])
+
+  const searchProduct = (barcode: string) => {
+    console.log([
+      'searchProduct',
+      `${context?.API_URL}product/find/${barcode}`,
+      process?.env,
+    ])
+    console.log(['link', `${context?.API_URL}product/find/${barcode}`])
     axios
       .get(`${context.API_URL}product/find/${barcode}`)
-      .then(res => {
+      .then((res) => {
         console.log(['rsp', res.data])
 
         if (res.data.status === 'OK' && res.data.result) {
@@ -34,12 +62,12 @@ const ScanBarcode = ({ navigation }) => {
           })
         }
       })
-      .catch(err => {
+      .catch((err) => {
         console.log(['err', err])
       })
   }
 
-  const handleBarcodeScan = scanResult => {
+  const handleBarcodeScan = (scanResult: { data: any }) => {
     if (scanResult.data != null) {
       setScan(false)
       let barcode = scanResult.data
@@ -48,7 +76,7 @@ const ScanBarcode = ({ navigation }) => {
     }
     return
   }
-  const { height, width } = Dimensions.get('window')
+  const { width } = Dimensions.get('window')
   const maskRowHeight = 50
   const maskColWidth = (width - 300) / 2
 
@@ -56,19 +84,17 @@ const ScanBarcode = ({ navigation }) => {
     <View style={styles.container}>
       <NavigationEvents onDidFocus={() => setScan(true)} />
       <RNCamera
-        ref={ref => {
-          cameraRef = ref
-        }}
-        defaultTouchToFocus
+        ref={cameraRef}
+        // defaultTouchToFocus={true}
         flashMode={camera.flashMode}
-        mirrorImage={false}
-        onBarCodeRead={e => {
+        // mirrorImage={false}
+        onBarCodeRead={(e) => {
           if (scan) {
             handleBarcodeScan(e)
           }
         }}
-        onFocusChanged={() => {}}
-        onZoomChanged={() => {}}
+        // onFocusChanged={() => {}}
+        // onZoomChanged={() => {}}
         permissionDialogTitle={'Permission to use camera'}
         permissionDialogMessage={
           'We need your permission to use your camera phone'

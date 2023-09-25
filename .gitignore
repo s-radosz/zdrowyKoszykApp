@@ -69,3 +69,6 @@ credentials.json
 ios/.xcode.env.local
 *.hprof
 .cxx/
+
+.env
+.env.config.ts

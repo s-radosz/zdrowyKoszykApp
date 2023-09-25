@@ -1,7 +1,11 @@
 import React, { useEffect } from 'react'
-import { Button, Text, View, StyleSheet, Dimensions } from 'react-native'
+import { Text, View, StyleSheet } from 'react-native'
 
-const ProductNotFound = ({ navigation }) => {
+type ProductNotFoundProps = {
+  navigation: any
+}
+
+const ProductNotFound = ({ navigation }: ProductNotFoundProps) => {
   useEffect(() => {
     const { params } = navigation.state
     const barcode = params ? params.barcode : null

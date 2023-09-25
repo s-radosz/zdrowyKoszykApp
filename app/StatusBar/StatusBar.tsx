@@ -1,6 +1,21 @@
 import React from 'react'
-import { View, StatusBar, Platform, StyleSheet, ViewStyle } from 'react-native'
+import { View, StatusBar, Platform, StyleSheet } from 'react-native'
 import { ifIphoneX } from 'react-native-iphone-x-helper'
+
+const StatusBarComponent = (props?: any) => {
+  const height = Platform.OS === 'ios' ? 20 : 0
+  const { backgroundColor } = props
+
+  return (
+    <View style={{ height, backgroundColor }}>
+      <View style={styles.iphoneXContainer}>
+        <StatusBar {...props} />
+      </View>
+    </View>
+  )
+}
+
+export default StatusBarComponent
 
 const styles = StyleSheet.create({
   statusBarBackground: {
@@ -17,16 +32,3 @@ const styles = StyleSheet.create({
     ),
   },
 })
-
-export default function(props) {
-  const height = Platform.OS === 'ios' ? 20 : 0
-  const { backgroundColor } = props
-
-  return (
-    <View style={{ height, backgroundColor }}>
-      <View style={styles.iphoneXContainer}>
-        <StatusBar {...props} />
-      </View>
-    </View>
-  )
-}

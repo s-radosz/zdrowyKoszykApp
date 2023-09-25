@@ -6,18 +6,21 @@ import {
   SafeAreaView,
   StyleSheet,
   Dimensions,
-  TouchableOpacity,
 } from 'react-native'
 import ButtonRadius from './../../Components/ButtomRadius/ButtonRadius'
 
 const fullHeight = Dimensions.get('window').height
 
 const logo = require('./../../assets/images/logo.png')
-const google = require('./../../assets/images/google.png')
-const fb = require('./../../assets/images/fb.png')
+// const google = require('./../../assets/images/google.png')
+// const fb = require('./../../assets/images/fb.png')
 
-const Welcome = (props) => {
-  const navigation = props.navigation
+type WelcomeProps = {
+  navigation: any
+}
+
+const Welcome = ({ navigation }: WelcomeProps) => {
+  // const navigation = props.navigation
 
   return (
     <SafeAreaView>

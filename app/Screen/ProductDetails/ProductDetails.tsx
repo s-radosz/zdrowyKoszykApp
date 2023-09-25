@@ -14,7 +14,11 @@ import ButtonRadius from './../../Components/ButtomRadius/ButtonRadius'
 
 const fullHeight = Dimensions.get('screen').height
 
-const ProductDetails = ({ navigation }) => {
+type ProductDetailsProps = {
+  navigation: any
+}
+
+const ProductDetails = ({ navigation }: ProductDetailsProps) => {
   const [name, setName] = useState('')
   const [details, setDetails] = useState('')
   const [ingredients, setIngredients] = useState([])
@@ -35,7 +39,7 @@ const ProductDetails = ({ navigation }) => {
     }
   }, [navigation])
 
-  const renderHeader = (section, _, isActive) => {
+  const renderHeader = (section: any, _: any) => {
     return (
       <Animatable.View
         duration={400}
@@ -54,11 +58,13 @@ const ProductDetails = ({ navigation }) => {
     )
   }
 
-  const openUrl = url => {
-    Linking.openURL(url).catch(err => console.error("Couldn't load page", err))
+  const openUrl = (url: string) => {
+    Linking.openURL(url).catch((err) =>
+      console.error("Couldn't load page", err),
+    )
   }
 
-  const renderContent = (section, _, isActive) => {
+  const renderContent = (section: any, _: any, isActive: boolean) => {
     return (
       <View style={{ overflow: 'hidden' }}>
         <Animatable.View
@@ -84,7 +90,7 @@ const ProductDetails = ({ navigation }) => {
     )
   }
 
-  const setSections = sections => {
+  const setSections = (sections: any) => {
     setActiveSections(sections.includes(undefined) ? [] : sections)
   }
 
