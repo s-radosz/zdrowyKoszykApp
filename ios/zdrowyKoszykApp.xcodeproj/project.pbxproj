@@ -8,14 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* zdrowyKoszykAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* zdrowyKoszykAppTests.m */; };
-		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
-		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		392415E4579B4AD1866FFDC2 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 73FA51A73DD64641AFCD7559 /* OpenSans-Regular.ttf */; };
 		77E90EE00BF8431A9E0103CE /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8222E441B0AE4D21A0E2A3B2 /* OpenSans-Bold.ttf */; };
-		7BCC3A780C8EAB438929CA7C /* libPods-zdrowyKoszykApp-zdrowyKoszykAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 305EAD15FFBE94CEF8EE15C6 /* libPods-zdrowyKoszykApp-zdrowyKoszykAppTests.a */; };
 		B1AC20E2CDA84BF8A122D608 /* OpenSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1B026B8E2C1F481C9BD4E762 /* OpenSans-Light.ttf */; };
-		E4991CF48646E28DD8BC07B1 /* libPods-zdrowyKoszykApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D357A4E46B3B0E1129C0E030 /* libPods-zdrowyKoszykApp.a */; };
+		BA5A7E95D4267DBACA511551 /* libPods-zdrowyKoszykApp-zdrowyKoszykAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B8EBD701A6460E6F1B9C96C /* libPods-zdrowyKoszykApp-zdrowyKoszykAppTests.a */; };
+		D1F24BB40CC37CFAAB2485AA /* libPods-zdrowyKoszykApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 526F65701C556A350EBB58DC /* libPods-zdrowyKoszykApp.a */; };
+		EFC12EE12ABFFF7500C6E21E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EFC12EE02ABFFF7500C6E21E /* main.m */; };
+		EFC12EE32AC0022D00C6E21E /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = EFC12EE22AC0022D00C6E21E /* AppDelegate.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,21 +46,22 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = zdrowyKoszykApp/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = zdrowyKoszykApp/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = zdrowyKoszykApp/main.m; sourceTree = "<group>"; };
-		158B228C0C7350A822DF32BA /* Pods-zdrowyKoszykApp-zdrowyKoszykAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zdrowyKoszykApp-zdrowyKoszykAppTests.release.xcconfig"; path = "Target Support Files/Pods-zdrowyKoszykApp-zdrowyKoszykAppTests/Pods-zdrowyKoszykApp-zdrowyKoszykAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		1B026B8E2C1F481C9BD4E762 /* OpenSans-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-Light.ttf"; path = "../app/assets/fonts/OpenSans-Light.ttf"; sourceTree = "<group>"; };
-		2C49094D627FB81B4675D060 /* Pods-zdrowyKoszykAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zdrowyKoszykAppTests.release.xcconfig"; path = "Target Support Files/Pods-zdrowyKoszykAppTests/Pods-zdrowyKoszykAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		1B8EBD701A6460E6F1B9C96C /* libPods-zdrowyKoszykApp-zdrowyKoszykAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-zdrowyKoszykApp-zdrowyKoszykAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E47B1E0B4A5D006451C7 /* zdrowyKoszykApp-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "zdrowyKoszykApp-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* zdrowyKoszykApp-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "zdrowyKoszykApp-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		305EAD15FFBE94CEF8EE15C6 /* libPods-zdrowyKoszykApp-zdrowyKoszykAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-zdrowyKoszykApp-zdrowyKoszykAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		39440D2B60E03F9B8369F191 /* Pods-zdrowyKoszykApp-zdrowyKoszykAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zdrowyKoszykApp-zdrowyKoszykAppTests.release.xcconfig"; path = "Target Support Files/Pods-zdrowyKoszykApp-zdrowyKoszykAppTests/Pods-zdrowyKoszykApp-zdrowyKoszykAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		3D1B5A0D0249B706BDE8C8BE /* Pods-zdrowyKoszykApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zdrowyKoszykApp.debug.xcconfig"; path = "Target Support Files/Pods-zdrowyKoszykApp/Pods-zdrowyKoszykApp.debug.xcconfig"; sourceTree = "<group>"; };
+		526F65701C556A350EBB58DC /* libPods-zdrowyKoszykApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-zdrowyKoszykApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		73FA51A73DD64641AFCD7559 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-Regular.ttf"; path = "../app/assets/fonts/OpenSans-Regular.ttf"; sourceTree = "<group>"; };
-		77D405BADF1671C3BEEB407E /* Pods-zdrowyKoszykApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zdrowyKoszykApp.debug.xcconfig"; path = "Target Support Files/Pods-zdrowyKoszykApp/Pods-zdrowyKoszykApp.debug.xcconfig"; sourceTree = "<group>"; };
 		8222E441B0AE4D21A0E2A3B2 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-Bold.ttf"; path = "../app/assets/fonts/OpenSans-Bold.ttf"; sourceTree = "<group>"; };
-		D357A4E46B3B0E1129C0E030 /* libPods-zdrowyKoszykApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-zdrowyKoszykApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E3B539EB4AA9A3F30341F847 /* Pods-zdrowyKoszykAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zdrowyKoszykAppTests.debug.xcconfig"; path = "Target Support Files/Pods-zdrowyKoszykAppTests/Pods-zdrowyKoszykAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A65B47736D0AB202F337A994 /* Pods-zdrowyKoszykApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zdrowyKoszykApp.release.xcconfig"; path = "Target Support Files/Pods-zdrowyKoszykApp/Pods-zdrowyKoszykApp.release.xcconfig"; sourceTree = "<group>"; };
+		A900EACAB6CD172B14B3783F /* Pods-zdrowyKoszykApp-zdrowyKoszykAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zdrowyKoszykApp-zdrowyKoszykAppTests.debug.xcconfig"; path = "Target Support Files/Pods-zdrowyKoszykApp-zdrowyKoszykAppTests/Pods-zdrowyKoszykApp-zdrowyKoszykAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
-		ED2AAAC7E8E7A090A22EF88D /* Pods-zdrowyKoszykApp-zdrowyKoszykAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zdrowyKoszykApp-zdrowyKoszykAppTests.debug.xcconfig"; path = "Target Support Files/Pods-zdrowyKoszykApp-zdrowyKoszykAppTests/Pods-zdrowyKoszykApp-zdrowyKoszykAppTests.debug.xcconfig"; sourceTree = "<group>"; };
-		F30FC9F4812D5F6BBBA606A0 /* Pods-zdrowyKoszykApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zdrowyKoszykApp.release.xcconfig"; path = "Target Support Files/Pods-zdrowyKoszykApp/Pods-zdrowyKoszykApp.release.xcconfig"; sourceTree = "<group>"; };
+		EFC12EDE2ABFFF5700C6E21E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = zdrowyKoszykApp/AppDelegate.h; sourceTree = "<group>"; };
+		EFC12EE02ABFFF7500C6E21E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = main.m; path = zdrowyKoszykApp/main.m; sourceTree = "<group>"; };
+		EFC12EE22AC0022D00C6E21E /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = zdrowyKoszykApp/AppDelegate.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,7 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7BCC3A780C8EAB438929CA7C /* libPods-zdrowyKoszykApp-zdrowyKoszykAppTests.a in Frameworks */,
+				BA5A7E95D4267DBACA511551 /* libPods-zdrowyKoszykApp-zdrowyKoszykAppTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,7 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4991CF48646E28DD8BC07B1 /* libPods-zdrowyKoszykApp.a in Frameworks */,
+				D1F24BB40CC37CFAAB2485AA /* libPods-zdrowyKoszykApp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,8 +133,8 @@
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
-				D357A4E46B3B0E1129C0E030 /* libPods-zdrowyKoszykApp.a */,
-				305EAD15FFBE94CEF8EE15C6 /* libPods-zdrowyKoszykApp-zdrowyKoszykAppTests.a */,
+				526F65701C556A350EBB58DC /* libPods-zdrowyKoszykApp.a */,
+				1B8EBD701A6460E6F1B9C96C /* libPods-zdrowyKoszykApp-zdrowyKoszykAppTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -141,12 +142,10 @@
 		51319130C919C2ACEF691A76 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				77D405BADF1671C3BEEB407E /* Pods-zdrowyKoszykApp.debug.xcconfig */,
-				F30FC9F4812D5F6BBBA606A0 /* Pods-zdrowyKoszykApp.release.xcconfig */,
-				E3B539EB4AA9A3F30341F847 /* Pods-zdrowyKoszykAppTests.debug.xcconfig */,
-				2C49094D627FB81B4675D060 /* Pods-zdrowyKoszykAppTests.release.xcconfig */,
-				ED2AAAC7E8E7A090A22EF88D /* Pods-zdrowyKoszykApp-zdrowyKoszykAppTests.debug.xcconfig */,
-				158B228C0C7350A822DF32BA /* Pods-zdrowyKoszykApp-zdrowyKoszykAppTests.release.xcconfig */,
+				3D1B5A0D0249B706BDE8C8BE /* Pods-zdrowyKoszykApp.debug.xcconfig */,
+				A65B47736D0AB202F337A994 /* Pods-zdrowyKoszykApp.release.xcconfig */,
+				A900EACAB6CD172B14B3783F /* Pods-zdrowyKoszykApp-zdrowyKoszykAppTests.debug.xcconfig */,
+				39440D2B60E03F9B8369F191 /* Pods-zdrowyKoszykApp-zdrowyKoszykAppTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -161,6 +160,9 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				EFC12EE22AC0022D00C6E21E /* AppDelegate.mm */,
+				EFC12EE02ABFFF7500C6E21E /* main.m */,
+				EFC12EDE2ABFFF5700C6E21E /* AppDelegate.h */,
 				13B07FAE1A68108700A75B9A /* zdrowyKoszykApp */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* zdrowyKoszykAppTests */,
@@ -202,12 +204,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "zdrowyKoszykAppTests" */;
 			buildPhases = (
-				3DA4C93C77D2591BB028DA7C /* [CP] Check Pods Manifest.lock */,
+				93C09615F42D226AC939C562 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
-				C5C16D4EC3DDD3E1EEC79F3B /* [CP] Embed Pods Frameworks */,
-				704B2D286A890F2E318B1F35 /* [CP] Copy Pods Resources */,
+				4E4D995112F151FB6CF26D88 /* [CP] Embed Pods Frameworks */,
+				25158042F5B2BEB8B4FD89CF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -223,14 +225,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "zdrowyKoszykApp" */;
 			buildPhases = (
-				512C0EEF06F641064B9C8A9B /* [CP] Check Pods Manifest.lock */,
+				9E8A8C67AD0AC541674E75C2 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				E17B3535C8B04E4399086C8C /* [CP] Copy Pods Resources */,
-				D573BEE70704EB37F49121EF /* [CP] Embed Pods Frameworks */,
+				2015D32ABBA88802AD0659D1 /* [CP] Embed Pods Frameworks */,
+				329CA6D0B682237824FEF4A9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -362,7 +364,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			files = (
 			);
 			inputPaths = (
@@ -372,111 +374,9 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
+			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
 		};
-		2D02E4CB1E0B4B27006451C7 /* Bundle React Native Code And Images */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Bundle React Native Code And Images";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
-		};
-		3DA4C93C77D2591BB028DA7C /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-zdrowyKoszykApp-zdrowyKoszykAppTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		512C0EEF06F641064B9C8A9B /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-zdrowyKoszykApp-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		704B2D286A890F2E318B1F35 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-zdrowyKoszykApp-zdrowyKoszykAppTests/Pods-zdrowyKoszykApp-zdrowyKoszykAppTests-resources.sh",
-				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
-				"${PODS_CONFIGURATION_BUILD_DIR}/React-Core/AccessibilityResources.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AccessibilityResources.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-zdrowyKoszykApp-zdrowyKoszykAppTests/Pods-zdrowyKoszykApp-zdrowyKoszykAppTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C5C16D4EC3DDD3E1EEC79F3B /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-zdrowyKoszykApp-zdrowyKoszykAppTests/Pods-zdrowyKoszykApp-zdrowyKoszykAppTests-frameworks.sh",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/Flipper-DoubleConversion/double-conversion.framework/double-conversion",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/Flipper-Glog/glog.framework/glog",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/OpenSSL-Universal/OpenSSL.framework/OpenSSL",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/hermes-engine/Pre-built/hermes.framework/hermes",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/double-conversion.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/glog.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OpenSSL.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/hermes.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-zdrowyKoszykApp-zdrowyKoszykAppTests/Pods-zdrowyKoszykApp-zdrowyKoszykAppTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D573BEE70704EB37F49121EF /* [CP] Embed Pods Frameworks */ = {
+		2015D32ABBA88802AD0659D1 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -500,7 +400,41 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-zdrowyKoszykApp/Pods-zdrowyKoszykApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E17B3535C8B04E4399086C8C /* [CP] Copy Pods Resources */ = {
+		25158042F5B2BEB8B4FD89CF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-zdrowyKoszykApp-zdrowyKoszykAppTests/Pods-zdrowyKoszykApp-zdrowyKoszykAppTests-resources.sh",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/React-Core/AccessibilityResources.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AccessibilityResources.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-zdrowyKoszykApp-zdrowyKoszykAppTests/Pods-zdrowyKoszykApp-zdrowyKoszykAppTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2D02E4CB1E0B4B27006451C7 /* Bundle React Native Code And Images */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Bundle React Native Code And Images";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
+		};
+		329CA6D0B682237824FEF4A9 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -518,6 +452,74 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-zdrowyKoszykApp/Pods-zdrowyKoszykApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4E4D995112F151FB6CF26D88 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-zdrowyKoszykApp-zdrowyKoszykAppTests/Pods-zdrowyKoszykApp-zdrowyKoszykAppTests-frameworks.sh",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/Flipper-DoubleConversion/double-conversion.framework/double-conversion",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/Flipper-Glog/glog.framework/glog",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/OpenSSL-Universal/OpenSSL.framework/OpenSSL",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/hermes-engine/Pre-built/hermes.framework/hermes",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/double-conversion.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/glog.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OpenSSL.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/hermes.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-zdrowyKoszykApp-zdrowyKoszykAppTests/Pods-zdrowyKoszykApp-zdrowyKoszykAppTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		93C09615F42D226AC939C562 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-zdrowyKoszykApp-zdrowyKoszykAppTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9E8A8C67AD0AC541674E75C2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-zdrowyKoszykApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
@@ -573,8 +575,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
-				13B07FC11A68108700A75B9A /* main.m in Sources */,
+				EFC12EE32AC0022D00C6E21E /* AppDelegate.mm in Sources */,
+				EFC12EE12ABFFF7500C6E21E /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -622,7 +624,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = ED2AAAC7E8E7A090A22EF88D /* Pods-zdrowyKoszykApp-zdrowyKoszykAppTests.debug.xcconfig */;
+			baseConfigurationReference = A900EACAB6CD172B14B3783F /* Pods-zdrowyKoszykApp-zdrowyKoszykAppTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -645,7 +647,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 158B228C0C7350A822DF32BA /* Pods-zdrowyKoszykApp-zdrowyKoszykAppTests.release.xcconfig */;
+			baseConfigurationReference = 39440D2B60E03F9B8369F191 /* Pods-zdrowyKoszykApp-zdrowyKoszykAppTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -665,14 +667,16 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 77D405BADF1671C3BEEB407E /* Pods-zdrowyKoszykApp.debug.xcconfig */;
+			baseConfigurationReference = 3D1B5A0D0249B706BDE8C8BE /* Pods-zdrowyKoszykApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
-				DEAD_CODE_STRIPPING = NO;
+				DEAD_CODE_STRIPPING = YES;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
+				GCC_NO_COMMON_BLOCKS = NO;
 				INFOPLIST_FILE = zdrowyKoszykApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -686,13 +690,15 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F30FC9F4812D5F6BBBA606A0 /* Pods-zdrowyKoszykApp.release.xcconfig */;
+			baseConfigurationReference = A65B47736D0AB202F337A994 /* Pods-zdrowyKoszykApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
+				GCC_NO_COMMON_BLOCKS = NO;
 				INFOPLIST_FILE = zdrowyKoszykApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -844,7 +850,7 @@
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_NO_COMMON_BLOCKS = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -900,7 +906,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_NO_COMMON_BLOCKS = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;

@@ -12,11 +12,11 @@ import ButtonRadius from './../../Components/ButtomRadius/ButtonRadius'
 
 const fullHeight = Dimensions.get('window').height
 
-const logo = require('./../../Assets/images/logo.png')
-const google = require('./../../Assets/images/google.png')
-const fb = require('./../../Assets/images/fb.png')
+const logo = require('./../../assets/images/logo.png')
+const google = require('./../../assets/images/google.png')
+const fb = require('./../../assets/images/fb.png')
 
-const Welcome = props => {
+const Welcome = (props) => {
   const navigation = props.navigation
 
   return (
