@@ -10,4 +10,6 @@ export const GlobalContext = React.createContext({
   showLoader: false,
   setShowLoader: (param) => {},
   NavigationService: () => {},
+  outOfContainerBackgroundColor: '#fff',
+  handleChangeOutOfContainerBackgroundColor: (backgroundColor) => {},
 })

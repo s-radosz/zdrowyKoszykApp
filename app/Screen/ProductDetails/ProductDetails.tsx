@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
   Dimensions,
   Linking,
+  SafeAreaView,
 } from 'react-native'
 import Accordion from 'react-native-collapsible/Accordion'
 import * as Animatable from 'react-native-animatable'
@@ -16,17 +17,23 @@ const fullHeight = Dimensions.get('screen').height
 
 type ProductDetailsProps = {
   navigation: any
+  route: any
 }
 
-const ProductDetails = ({ navigation }: ProductDetailsProps) => {
+const ProductDetails = ({ navigation, route }: ProductDetailsProps) => {
   const [name, setName] = useState('')
   const [details, setDetails] = useState('')
   const [ingredients, setIngredients] = useState([])
   const [activeSections, setActiveSections] = useState([])
 
   useEffect(() => {
-    const { params } = navigation.state
-    const productDetails = params ? params.productDetails.result : null
+    console.log([
+      'route?.params?.productDetails',
+      route?.params?.productDetails,
+    ])
+    const productDetails = route?.params?.productDetails?.result
+      ? route?.params?.productDetails?.result
+      : null
 
     if (productDetails) {
       setName(productDetails.name ? productDetails.name : '')
@@ -37,7 +44,7 @@ const ProductDetails = ({ navigation }: ProductDetailsProps) => {
           : [],
       )
     }
-  }, [navigation])
+  }, [route?.params?.productDetails?.result])
 
   const renderHeader = (section: any, _: any) => {
     return (
@@ -95,7 +102,7 @@ const ProductDetails = ({ navigation }: ProductDetailsProps) => {
   }
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={[{ flex: 1 }, styles.container]}>
       <View style={styles.titleContainer}>
         <View style={styles.titleShadow}>
           <Text style={styles.title}>{name}</Text>
@@ -125,7 +132,7 @@ const ProductDetails = ({ navigation }: ProductDetailsProps) => {
           action={() => navigation.navigate('ScanBarcode')}
         />
       </View>
-    </View>
+    </SafeAreaView>
   )
 }
 export default ProductDetails
@@ -141,16 +148,17 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
     backgroundColor: '#fff',
     paddingBottom: 10,
+    width: '100%',
   },
   titleShadow: {
     backgroundColor: '#fff',
     shadowColor: '#000',
     shadowOffset: { width: 1, height: 1 },
     shadowOpacity: 0.4,
-    shadowRadius: 3,
+    shadowRadius: 5,
     elevation: 5,
-    borderBottomLeftRadius: 15,
-    borderBottomRightRadius: 15,
+    // borderBottomLeftRadius: 15,
+    // borderBottomRightRadius: 15,
   },
   title: {
     textAlign: 'center',

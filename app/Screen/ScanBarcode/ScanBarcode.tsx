@@ -4,8 +4,9 @@ import { RNCamera } from 'react-native-camera'
 import axios from 'axios'
 // @ts-ignore
 import { GlobalContext } from './../../Context/GlobalContext'
-import { NavigationEvents } from 'react-navigation'
+// import { NavigationEvents } from 'react-navigation'
 import DeviceInfo from 'react-native-device-info'
+import { useIsFocused } from '@react-navigation/native'
 
 type ScanBarcodeProps = {
   navigation: any
@@ -18,6 +19,7 @@ const ScanBarcode = ({ navigation }: ScanBarcodeProps) => {
   //   type: RNCamera.Constants.Type.back,
   //   flashMode: RNCamera.Constants.FlashMode.auto,
   // })
+  const isFocused = useIsFocused()
   const camera = {
     type: RNCamera.Constants.Type.back,
     flashMode: RNCamera.Constants.FlashMode.auto,
@@ -27,17 +29,33 @@ const ScanBarcode = ({ navigation }: ScanBarcodeProps) => {
   const context = useContext(GlobalContext) as any
 
   //test scan on simulator
-  useEffect(() => {
-    let isSimulator = DeviceInfo.isEmulator()
+  // useEffect(() => {
+  //   let isSimulator = DeviceInfo.isEmulator()
 
-    // @ts-ignore
-    if (isSimulator) {
-      console.log(['isSimulator', isSimulator])
-      setTimeout(() => {
-        searchProduct('8710449944194')
-      }, 3000)
+  //   // @ts-ignore
+  //   if (isSimulator) {
+  //     console.log(['isSimulator', isSimulator])
+  //     setTimeout(() => {
+  //       searchProduct('8710449944194')
+  //     }, 3000)
+  //   }
+  // }, [])
+
+  useEffect(() => {
+    if (isFocused) {
+      context?.handleChangeOutOfContainerBackgroundColor('#fff')
+
+      let isSimulator = DeviceInfo.isEmulator()
+
+      // @ts-ignore
+      if (isSimulator) {
+        console.log(['isSimulator', isSimulator])
+        setTimeout(() => {
+          searchProduct('8710449944194')
+        }, 3000)
+      }
     }
-  }, [])
+  }, [isFocused])
 
   const searchProduct = (barcode: string) => {
     console.log([
@@ -82,7 +100,7 @@ const ScanBarcode = ({ navigation }: ScanBarcodeProps) => {
 
   return (
     <View style={styles.container}>
-      <NavigationEvents onDidFocus={() => setScan(true)} />
+      {/* <NavigationEvents onDidFocus={() => setScan(true)} /> */}
       <RNCamera
         ref={cameraRef}
         // defaultTouchToFocus={true}

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext, useEffect } from 'react'
 import {
   Text,
   View,
@@ -8,7 +8,9 @@ import {
   Dimensions,
 } from 'react-native'
 import ButtonRadius from './../../Components/ButtomRadius/ButtonRadius'
-
+// @ts-ignore
+import { GlobalContext } from './../../Context/GlobalContext'
+import { useIsFocused } from '@react-navigation/native'
 const fullHeight = Dimensions.get('window').height
 
 const logo = require('./../../assets/images/logo.png')
@@ -21,18 +23,31 @@ type WelcomeProps = {
 
 const Welcome = ({ navigation }: WelcomeProps) => {
   // const navigation = props.navigation
+  const isFocused = useIsFocused()
+  const context = useContext(GlobalContext) as any
+
+  useEffect(() => {
+    if (isFocused) {
+      console.log(['nav', navigation])
+      context?.handleChangeOutOfContainerBackgroundColor('#74b49b')
+    }
+  }, [isFocused])
+
+  const handleScanBarcodeRedirect = () => {
+    navigation?.navigate('ScanBarcode')
+  }
 
   return (
-    <SafeAreaView>
-      <View style={styles.container}>
-        <View style={styles.topContainer}>
-          <View style={styles.topWrapper}>
-            <Image style={styles.logo} source={logo} resizeMode="contain" />
-            <View style={styles.descriptionContainer}>
-              <Text style={styles.descriptionText}>Darmowy skaner</Text>
-              <Text style={styles.descriptionText}>składu produktów</Text>
-            </View>
-            {/* <View>
+    <SafeAreaView style={[{ flex: 1 }, styles.container]}>
+      {/* <View style={}> */}
+      <View style={styles.topContainer}>
+        <View style={styles.topWrapper}>
+          <Image style={styles.logo} source={logo} resizeMode="contain" />
+          <View style={styles.descriptionContainer}>
+            <Text style={styles.descriptionText}>Darmowy skaner</Text>
+            <Text style={styles.descriptionText}>składu produktów</Text>
+          </View>
+          {/* <View>
               <Text style={styles.loginHeader}>Zaloguj się przez</Text>
               <View style={styles.btnContainer}>
                 <TouchableOpacity
@@ -57,21 +72,21 @@ const Welcome = ({ navigation }: WelcomeProps) => {
               </View>
             </View> */}
 
-            <ButtonRadius
-              text="Zaczynajmy"
-              backgroundColor="#5c8d89"
-              textColor="#fff"
-              action={() => navigation.navigate('ScanBarcode')}
-            />
-          </View>
-        </View>
-        <View style={styles.bottomContainer}>
-          <View style={styles.bottomShadow} />
-          <View style={styles.bottomTextContainer}>
-            <Text style={styles.bottomText}>Created by Radosz Szymon</Text>
-          </View>
+          <ButtonRadius
+            text="Zaczynajmy"
+            backgroundColor="#5c8d89"
+            textColor="#fff"
+            action={handleScanBarcodeRedirect}
+          />
         </View>
       </View>
+      <View style={styles.bottomContainer}>
+        <View style={styles.bottomShadow} />
+        <View style={styles.bottomTextContainer}>
+          <Text style={styles.bottomText}>Created by Radosz Szymon</Text>
+        </View>
+      </View>
+      {/* </View> */}
     </SafeAreaView>
   )
 }
