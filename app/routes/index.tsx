@@ -1,6 +1,5 @@
-// import { createAppContainer } from 'react-navigation'
 import React, { Component } from 'react'
-import { SafeAreaView } from 'react-native'
+import { SafeAreaView, Alert, Linking, BackHandler } from 'react-native'
 import Welcome from '../Screen/Welcome/Welcome'
 import ScanBarcode from '../Screen/ScanBarcode/ScanBarcode'
 import ProductDetails from './../Screen/ProductDetails/ProductDetails'
@@ -8,56 +7,12 @@ import ProductNotFound from './../Screen/ProductNotFound/ProductNotFound'
 import GoogleLogin from './../Screen/GoogleLogin/GoogleLogin'
 // @ts-ignore
 import { GlobalContext } from './../Context/GlobalContext'
-// import NavigationService from './NavigationService'
-// import { ifIphoneX } from 'react-native-iphone-x-helper'
-
-// import { createStackNavigator } from 'react-navigation-stack'
 import { API_URL as API_URL_ENV } from '../../.env.config'
 
 import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 
-// const MainStack = createStackNavigator(
-//   {
-//     Welcome: {
-//       screen: Welcome,
-//       navigationOptions: {
-//         headerShown: false,
-//       },
-//     },
-//     ScanBarcode: {
-//       screen: ScanBarcode,
-//       navigationOptions: {
-//         headerShown: false,
-//       },
-//     },
-//     ProductDetails: {
-//       screen: ProductDetails,
-//       navigationOptions: {
-//         headerShown: false,
-//       },
-//     },
-//     ProductNotFound: {
-//       screen: ProductNotFound,
-//       navigationOptions: {
-//         headerShown: false,
-//       },
-//     },
-//     GoogleLogin: {
-//       screen: GoogleLogin,
-//       navigationOptions: {
-//         headerShown: false,
-//       },
-//     },
-//   },
-//   {
-//     initialRouteName: 'Welcome',
-//     // transitionConfig: () => fadeIn(),
-//     headerMode: 'none',
-//   },
-// )
-
-// const AppContainer = createAppContainer(MainStack)
+import VersionCheck from 'react-native-version-check'
 
 const Stack = createNativeStackNavigator()
 
@@ -102,9 +57,36 @@ export default class App extends Component {
     })
   }
 
-  // componentDidMount = async () => {
-  //   NavigationService.navigate('Welcome', {})
-  // }
+  checkVersion = async () => {
+    try {
+      let updateNeeded = await VersionCheck?.needUpdate()
+
+      // console.log(['checkVersion', updateNeeded])
+
+      if (updateNeeded && updateNeeded?.isNeeded) {
+        Alert?.alert(
+          'Dostępna Nowa Wersja',
+          'Zaktualizuj aplikację, aby kontynuować',
+          [
+            {
+              text: 'Zaktualizuj',
+              onPress: () => {
+                BackHandler?.exitApp()
+                Linking?.openURL(updateNeeded?.storeUrl)
+              },
+            },
+          ],
+          {
+            cancelable: false,
+          },
+        )
+      }
+    } catch (err) {}
+  }
+
+  componentDidMount = async () => {
+    this?.checkVersion()
+  }
 
   render() {
     const {
@@ -133,8 +115,6 @@ export default class App extends Component {
           showLoader: showLoader,
           setShowLoader: this.setShowLoader,
           closeAlert: this.closeAlert,
-          // @ts-ignore
-          // NavigationService: NavigationService,
           outOfContainerBackgroundColor: outOfContainerBackgroundColor,
           handleChangeOutOfContainerBackgroundColor:
             this.handleChangeOutOfContainerBackgroundColor,
@@ -143,22 +123,9 @@ export default class App extends Component {
         <SafeAreaView
           style={{
             flex: 1,
-            // backgroundColor: '#fff',
             backgroundColor: outOfContainerBackgroundColor,
           }}
         >
-          {/*<StatusBar backgroundColor="#f4a157" barStyle="light-content" />*/}
-          {/* <AppContainer
-            ref={(navigatorRef) => {
-              NavigationService.setTopLevelNavigator(navigatorRef)
-            }}
-            // @ts-ignore
-            alertType={alertType}
-            alertMessage={alertMessage}
-            closeAlert={this.closeAlert}
-            showAlert={showAlert}
-          /> */}
-
           <NavigationContainer>
             <Stack.Navigator
               initialRouteName="Welcome"

@@ -6,6 +6,8 @@ import {
   SafeAreaView,
   StyleSheet,
   Dimensions,
+  Linking,
+  TouchableOpacity,
 } from 'react-native'
 import ButtonRadius from './../../Components/ButtomRadius/ButtonRadius'
 // @ts-ignore
@@ -35,6 +37,10 @@ const Welcome = ({ navigation }: WelcomeProps) => {
 
   const handleScanBarcodeRedirect = () => {
     navigation?.navigate('ScanBarcode')
+  }
+
+  const handlePortfolioRedirect = () => {
+    Linking?.openURL('https://www.radoszszymon.usermd.net/')
   }
 
   return (
@@ -82,9 +88,12 @@ const Welcome = ({ navigation }: WelcomeProps) => {
       </View>
       <View style={styles.bottomContainer}>
         <View style={styles.bottomShadow} />
-        <View style={styles.bottomTextContainer}>
-          <Text style={styles.bottomText}>Created by Radosz Szymon</Text>
-        </View>
+        <TouchableOpacity
+          style={styles.bottomTextContainer}
+          onPress={handlePortfolioRedirect}
+        >
+          <Text style={styles.bottomText}>Created by Szymon Radosz</Text>
+        </TouchableOpacity>
       </View>
       {/* </View> */}
     </SafeAreaView>
