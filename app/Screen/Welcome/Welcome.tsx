@@ -105,14 +105,14 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     flexDirection: 'column',
-    height: fullHeight,
+    height: fullHeight - 25,
   },
   topContainer: {
     height: '95%',
     width: '100%',
   },
   bottomContainer: {
-    height: '15%',
+    height: 150,
     backgroundColor: '#74b49b',
     width: '100%',
   },

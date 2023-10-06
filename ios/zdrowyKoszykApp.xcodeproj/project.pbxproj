@@ -50,13 +50,13 @@
 		1B8EBD701A6460E6F1B9C96C /* libPods-zdrowyKoszykApp-zdrowyKoszykAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-zdrowyKoszykApp-zdrowyKoszykAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E47B1E0B4A5D006451C7 /* zdrowyKoszykApp-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "zdrowyKoszykApp-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* zdrowyKoszykApp-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "zdrowyKoszykApp-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		39440D2B60E03F9B8369F191 /* Pods-zdrowyKoszykApp-zdrowyKoszykAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zdrowyKoszykApp-zdrowyKoszykAppTests.release.xcconfig"; path = "Target Support Files/Pods-zdrowyKoszykApp-zdrowyKoszykAppTests/Pods-zdrowyKoszykApp-zdrowyKoszykAppTests.release.xcconfig"; sourceTree = "<group>"; };
-		3D1B5A0D0249B706BDE8C8BE /* Pods-zdrowyKoszykApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zdrowyKoszykApp.debug.xcconfig"; path = "Target Support Files/Pods-zdrowyKoszykApp/Pods-zdrowyKoszykApp.debug.xcconfig"; sourceTree = "<group>"; };
+		2D2EBDCB28B52AE74037B892 /* Pods-zdrowyKoszykApp-zdrowyKoszykAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zdrowyKoszykApp-zdrowyKoszykAppTests.release.xcconfig"; path = "Target Support Files/Pods-zdrowyKoszykApp-zdrowyKoszykAppTests/Pods-zdrowyKoszykApp-zdrowyKoszykAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		32BF80E3B58DB37CC14E47E2 /* Pods-zdrowyKoszykApp-zdrowyKoszykAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zdrowyKoszykApp-zdrowyKoszykAppTests.debug.xcconfig"; path = "Target Support Files/Pods-zdrowyKoszykApp-zdrowyKoszykAppTests/Pods-zdrowyKoszykApp-zdrowyKoszykAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		526F65701C556A350EBB58DC /* libPods-zdrowyKoszykApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-zdrowyKoszykApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		73FA51A73DD64641AFCD7559 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-Regular.ttf"; path = "../app/assets/fonts/OpenSans-Regular.ttf"; sourceTree = "<group>"; };
 		8222E441B0AE4D21A0E2A3B2 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-Bold.ttf"; path = "../app/assets/fonts/OpenSans-Bold.ttf"; sourceTree = "<group>"; };
-		A65B47736D0AB202F337A994 /* Pods-zdrowyKoszykApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zdrowyKoszykApp.release.xcconfig"; path = "Target Support Files/Pods-zdrowyKoszykApp/Pods-zdrowyKoszykApp.release.xcconfig"; sourceTree = "<group>"; };
-		A900EACAB6CD172B14B3783F /* Pods-zdrowyKoszykApp-zdrowyKoszykAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zdrowyKoszykApp-zdrowyKoszykAppTests.debug.xcconfig"; path = "Target Support Files/Pods-zdrowyKoszykApp-zdrowyKoszykAppTests/Pods-zdrowyKoszykApp-zdrowyKoszykAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D18772AC5B9475FE4E8E3DFC /* Pods-zdrowyKoszykApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zdrowyKoszykApp.release.xcconfig"; path = "Target Support Files/Pods-zdrowyKoszykApp/Pods-zdrowyKoszykApp.release.xcconfig"; sourceTree = "<group>"; };
+		D1A02F617CBD11B7B0AAB9C7 /* Pods-zdrowyKoszykApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-zdrowyKoszykApp.debug.xcconfig"; path = "Target Support Files/Pods-zdrowyKoszykApp/Pods-zdrowyKoszykApp.debug.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 		EFC12EDE2ABFFF5700C6E21E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = zdrowyKoszykApp/AppDelegate.h; sourceTree = "<group>"; };
@@ -139,13 +139,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		51319130C919C2ACEF691A76 /* Pods */ = {
+		39EA0FE1545A9D0EBB53444A /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				3D1B5A0D0249B706BDE8C8BE /* Pods-zdrowyKoszykApp.debug.xcconfig */,
-				A65B47736D0AB202F337A994 /* Pods-zdrowyKoszykApp.release.xcconfig */,
-				A900EACAB6CD172B14B3783F /* Pods-zdrowyKoszykApp-zdrowyKoszykAppTests.debug.xcconfig */,
-				39440D2B60E03F9B8369F191 /* Pods-zdrowyKoszykApp-zdrowyKoszykAppTests.release.xcconfig */,
+				D1A02F617CBD11B7B0AAB9C7 /* Pods-zdrowyKoszykApp.debug.xcconfig */,
+				D18772AC5B9475FE4E8E3DFC /* Pods-zdrowyKoszykApp.release.xcconfig */,
+				32BF80E3B58DB37CC14E47E2 /* Pods-zdrowyKoszykApp-zdrowyKoszykAppTests.debug.xcconfig */,
+				2D2EBDCB28B52AE74037B892 /* Pods-zdrowyKoszykApp-zdrowyKoszykAppTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -168,8 +168,8 @@
 				00E356EF1AD99517003FC87E /* zdrowyKoszykAppTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
-				51319130C919C2ACEF691A76 /* Pods */,
 				BD94F432577D4505A78FBC76 /* Resources */,
+				39EA0FE1545A9D0EBB53444A /* Pods */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -624,7 +624,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A900EACAB6CD172B14B3783F /* Pods-zdrowyKoszykApp-zdrowyKoszykAppTests.debug.xcconfig */;
+			baseConfigurationReference = 32BF80E3B58DB37CC14E47E2 /* Pods-zdrowyKoszykApp-zdrowyKoszykAppTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -632,7 +632,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = zdrowyKoszykAppTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -647,12 +647,12 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 39440D2B60E03F9B8369F191 /* Pods-zdrowyKoszykApp-zdrowyKoszykAppTests.release.xcconfig */;
+			baseConfigurationReference = 2D2EBDCB28B52AE74037B892 /* Pods-zdrowyKoszykApp-zdrowyKoszykAppTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = zdrowyKoszykAppTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -667,7 +667,7 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3D1B5A0D0249B706BDE8C8BE /* Pods-zdrowyKoszykApp.debug.xcconfig */;
+			baseConfigurationReference = D1A02F617CBD11B7B0AAB9C7 /* Pods-zdrowyKoszykApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
@@ -690,10 +690,11 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A65B47736D0AB202F337A994 /* Pods-zdrowyKoszykApp.release.xcconfig */;
+			baseConfigurationReference = D18772AC5B9475FE4E8E3DFC /* Pods-zdrowyKoszykApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
+				EXCLUDED_ARCHS = "";
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GCC_NO_COMMON_BLOCKS = NO;
 				INFOPLIST_FILE = zdrowyKoszykApp/Info.plist;
