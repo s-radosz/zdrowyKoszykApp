@@ -111,6 +111,7 @@ const ScanBarcode = ({ navigation }: ScanBarcodeProps) => {
         // defaultTouchToFocus={true}
         flashMode={camera.flashMode}
         // mirrorImage={false}
+        captureAudio={false}
         onBarCodeRead={(e) => {
           if (scan) {
             handleBarcodeScan(e)
@@ -118,10 +119,10 @@ const ScanBarcode = ({ navigation }: ScanBarcodeProps) => {
         }}
         // onFocusChanged={() => {}}
         // onZoomChanged={() => {}}
-        permissionDialogTitle={'Permission to use camera'}
-        permissionDialogMessage={
-          'We need your permission to use your camera phone'
-        }
+        // permissionDialogTitle={'Permission to use camera'}
+        // permissionDialogMessage={
+        //   'We need your permission to use your camera phone'
+        // }
         style={styles.preview}
         type={camera.type}
       />

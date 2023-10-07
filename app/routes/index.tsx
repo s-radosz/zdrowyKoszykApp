@@ -4,7 +4,7 @@ import Welcome from '../Screen/Welcome/Welcome'
 import ScanBarcode from '../Screen/ScanBarcode/ScanBarcode'
 import ProductDetails from './../Screen/ProductDetails/ProductDetails'
 import ProductNotFound from './../Screen/ProductNotFound/ProductNotFound'
-import GoogleLogin from './../Screen/GoogleLogin/GoogleLogin'
+// import GoogleLogin from './../Screen/GoogleLogin/GoogleLogin'
 // @ts-ignore
 import { GlobalContext } from './../Context/GlobalContext'
 import { API_URL as API_URL_ENV } from '../../.env.config'
@@ -181,11 +181,11 @@ export default class App extends Component {
                 component={ProductNotFound}
                 options={{ animation: 'fade' }}
               />
-              <Stack.Screen
+              {/* <Stack.Screen
                 name="GoogleLogin"
                 component={GoogleLogin}
                 options={{ animation: 'fade' }}
-              />
+              /> */}
             </Stack.Navigator>
           </NavigationContainer>
         </SafeAreaView>

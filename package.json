@@ -10,7 +10,6 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "@react-native-community/google-signin": "^3.0.4",
     "@react-native-community/masked-view": "^0.1.6",
     "@react-native-firebase/analytics": "16.5",
     "@react-native-firebase/app": "16.5",
