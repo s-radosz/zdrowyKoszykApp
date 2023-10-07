@@ -12,6 +12,7 @@ import {
 import Accordion from 'react-native-collapsible/Accordion'
 import * as Animatable from 'react-native-animatable'
 import ButtonRadius from './../../Components/ButtomRadius/ButtonRadius'
+import analytics from '@react-native-firebase/analytics'
 
 const fullHeight = Dimensions.get('screen').height
 
@@ -101,6 +102,14 @@ const ProductDetails = ({ navigation, route }: ProductDetailsProps) => {
     setActiveSections(sections.includes(undefined) ? [] : sections)
   }
 
+  const handleScanNext = async () => {
+    await analytics().logEvent('item_click', {
+      item_name: 'ScanBarcode Next',
+    })
+
+    navigation.navigate('ScanBarcode')
+  }
+
   return (
     <SafeAreaView style={[{ flex: 1 }, styles.container]}>
       <View style={styles.titleContainer}>
@@ -129,7 +138,7 @@ const ProductDetails = ({ navigation, route }: ProductDetailsProps) => {
           text="Skanuj kolejny"
           backgroundColor="#5c8d89"
           textColor="#fff"
-          action={() => navigation.navigate('ScanBarcode')}
+          action={handleScanNext}
         />
       </View>
     </SafeAreaView>

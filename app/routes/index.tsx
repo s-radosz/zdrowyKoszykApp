@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, Ref } from 'react'
 import { SafeAreaView, Alert, Linking, BackHandler } from 'react-native'
 import Welcome from '../Screen/Welcome/Welcome'
 import ScanBarcode from '../Screen/ScanBarcode/ScanBarcode'
@@ -9,14 +9,20 @@ import GoogleLogin from './../Screen/GoogleLogin/GoogleLogin'
 import { GlobalContext } from './../Context/GlobalContext'
 import { API_URL as API_URL_ENV } from '../../.env.config'
 
-import { NavigationContainer } from '@react-navigation/native'
+import {
+  NavigationContainer,
+  NavigationContainerRef,
+} from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 
 import VersionCheck from 'react-native-version-check'
+import analytics from '@react-native-firebase/analytics'
 
 const Stack = createNativeStackNavigator()
 
 export default class App extends Component {
+  navigationRef: Ref<NavigationContainerRef<RootParamList>> | undefined
+  routeNameRef: any
   constructor(props: any) {
     super(props)
     this.state = {
@@ -27,6 +33,9 @@ export default class App extends Component {
       showLoader: false,
       outOfContainerBackgroundColor: '#fff',
     }
+
+    this.routeNameRef = React.createRef()
+    this.navigationRef = React.createRef()
   }
 
   handleChangeOutOfContainerBackgroundColor = (backgroundColor: string) => {
@@ -126,7 +135,26 @@ export default class App extends Component {
             backgroundColor: outOfContainerBackgroundColor,
           }}
         >
-          <NavigationContainer>
+          <NavigationContainer
+            ref={this.navigationRef}
+            onReady={() => {
+              this.routeNameRef.current =
+                this.navigationRef.current.getCurrentRoute().name
+            }}
+            onStateChange={async () => {
+              const previousRouteName = this.routeNameRef.current
+              const currentRouteName =
+                this.navigationRef.current.getCurrentRoute().name
+
+              if (previousRouteName !== currentRouteName) {
+                await analytics().logScreenView({
+                  screen_name: currentRouteName,
+                  screen_class: currentRouteName,
+                })
+              }
+              this.routeNameRef.current = currentRouteName
+            }}
+          >
             <Stack.Navigator
               initialRouteName="Welcome"
               screenOptions={{

@@ -203,6 +203,7 @@
 
 
 apply plugin: "com.android.application"
+apply plugin: "com.google.gms.google-services"
 apply plugin: "com.facebook.react"
 
 /**

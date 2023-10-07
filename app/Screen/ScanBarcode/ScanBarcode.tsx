@@ -7,6 +7,7 @@ import { GlobalContext } from './../../Context/GlobalContext'
 // import { NavigationEvents } from 'react-navigation'
 import DeviceInfo from 'react-native-device-info'
 import { useIsFocused } from '@react-navigation/native'
+import analytics from '@react-native-firebase/analytics'
 
 type ScanBarcodeProps = {
   navigation: any
@@ -66,8 +67,12 @@ const ScanBarcode = ({ navigation }: ScanBarcodeProps) => {
     console.log(['link', `${context?.API_URL}product/find/${barcode}`])
     axios
       .get(`${context.API_URL}product/find/${barcode}`)
-      .then((res) => {
+      .then(async (res) => {
         console.log(['rsp', res.data])
+
+        await analytics().logEvent('scan_barcode', {
+          item_name: barcode,
+        })
 
         if (res.data.status === 'OK' && res.data.result) {
           navigation.navigate('ProductDetails', {

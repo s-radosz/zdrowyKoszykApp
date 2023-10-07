@@ -13,6 +13,8 @@ import ButtonRadius from './../../Components/ButtomRadius/ButtonRadius'
 // @ts-ignore
 import { GlobalContext } from './../../Context/GlobalContext'
 import { useIsFocused } from '@react-navigation/native'
+import analytics from '@react-native-firebase/analytics'
+
 const fullHeight = Dimensions.get('window').height
 
 const logo = require('./../../assets/images/logo.png')
@@ -35,11 +37,19 @@ const Welcome = ({ navigation }: WelcomeProps) => {
     }
   }, [isFocused])
 
-  const handleScanBarcodeRedirect = () => {
+  const handleScanBarcodeRedirect = async () => {
+    await analytics().logEvent('item_click', {
+      item_name: 'ScanBarcode',
+    })
+
     navigation?.navigate('ScanBarcode')
   }
 
-  const handlePortfolioRedirect = () => {
+  const handlePortfolioRedirect = async () => {
+    await analytics().logEvent('item_click', {
+      item_name: 'Portfolio',
+    })
+
     Linking?.openURL('https://www.radoszszymon.usermd.net/')
   }
 
