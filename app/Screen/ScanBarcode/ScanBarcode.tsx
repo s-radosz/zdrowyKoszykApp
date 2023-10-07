@@ -44,7 +44,7 @@ const ScanBarcode = ({ navigation }: ScanBarcodeProps) => {
 
   useEffect(() => {
     if (isFocused) {
-      context?.handleChangeOutOfContainerBackgroundColor('#fff')
+      context?.handleChangeOutOfContainerBackgroundColor('#000')
 
       let isSimulator = DeviceInfo.isEmulator()
 

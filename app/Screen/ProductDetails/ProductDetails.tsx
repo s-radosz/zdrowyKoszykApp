@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import {
   Text,
   View,
@@ -13,6 +13,8 @@ import Accordion from 'react-native-collapsible/Accordion'
 import * as Animatable from 'react-native-animatable'
 import ButtonRadius from './../../Components/ButtomRadius/ButtonRadius'
 import analytics from '@react-native-firebase/analytics'
+// @ts-ignore
+import { GlobalContext } from './../../Context/GlobalContext'
 
 const fullHeight = Dimensions.get('screen').height
 
@@ -27,7 +29,10 @@ const ProductDetails = ({ navigation, route }: ProductDetailsProps) => {
   const [ingredients, setIngredients] = useState([])
   const [activeSections, setActiveSections] = useState([])
 
+  const context = useContext(GlobalContext) as any
+
   useEffect(() => {
+    context?.handleChangeOutOfContainerBackgroundColor('#fff')
     console.log([
       'route?.params?.productDetails',
       route?.params?.productDetails,

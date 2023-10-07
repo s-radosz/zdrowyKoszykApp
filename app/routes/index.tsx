@@ -161,14 +161,31 @@ export default class App extends Component {
                 headerShown: false,
               }}
             >
-              <Stack.Screen name="Welcome" component={Welcome} />
-              <Stack.Screen name="ScanBarcode" component={ScanBarcode} />
-              <Stack.Screen name="ProductDetails" component={ProductDetails} />
+              <Stack.Screen
+                name="Welcome"
+                component={Welcome}
+                options={{ animation: 'fade' }}
+              />
+              <Stack.Screen
+                name="ScanBarcode"
+                component={ScanBarcode}
+                options={{ animation: 'fade' }}
+              />
+              <Stack.Screen
+                name="ProductDetails"
+                component={ProductDetails}
+                options={{ animation: 'fade' }}
+              />
               <Stack.Screen
                 name="ProductNotFound"
                 component={ProductNotFound}
+                options={{ animation: 'fade' }}
               />
-              <Stack.Screen name="GoogleLogin" component={GoogleLogin} />
+              <Stack.Screen
+                name="GoogleLogin"
+                component={GoogleLogin}
+                options={{ animation: 'fade' }}
+              />
             </Stack.Navigator>
           </NavigationContainer>
         </SafeAreaView>
