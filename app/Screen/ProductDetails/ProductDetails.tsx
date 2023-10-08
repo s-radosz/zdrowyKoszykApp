@@ -119,12 +119,20 @@ const ProductDetails = ({ navigation, route }: ProductDetailsProps) => {
     <SafeAreaView style={[{ flex: 1 }, styles.container]}>
       <View style={styles.titleContainer}>
         <View style={styles.titleShadow}>
-          <Text style={styles.title}>{name}</Text>
+          <Text style={styles.title}>
+            {route?.params?.notFound ? 'Nie znaleziono produktu' : name}
+          </Text>
         </View>
       </View>
 
       <ScrollView style={styles.scrollContainer}>
-        <Text style={styles.details}>{details}</Text>
+        <Text style={styles.details}>
+          {details
+            ? `Skład: ${details}`
+            : route?.params?.notFound
+            ? null
+            : 'Nie znaleziono składu produktu.'}
+        </Text>
         {ingredients && ingredients.length > 0 && (
           <Accordion
             activeSections={activeSections}
@@ -186,6 +194,7 @@ const styles = StyleSheet.create({
   },
   scrollContainer: {
     backgroundColor: '#fff',
+    width: '100%',
   },
   details: {
     fontSize: 14,

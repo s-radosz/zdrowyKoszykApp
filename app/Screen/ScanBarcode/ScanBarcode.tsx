@@ -1,5 +1,5 @@
 import React, { useState, useContext, useRef, useEffect } from 'react'
-import { Text, View, StyleSheet, Dimensions } from 'react-native'
+import { Text, View, StyleSheet, Dimensions, Platform } from 'react-native'
 import { RNCamera } from 'react-native-camera'
 import axios from 'axios'
 // @ts-ignore
@@ -49,12 +49,12 @@ const ScanBarcode = ({ navigation }: ScanBarcodeProps) => {
       let isSimulator = DeviceInfo.isEmulator()
 
       // @ts-ignore
-      if (isSimulator) {
-        console.log(['isSimulator', isSimulator])
-        setTimeout(() => {
-          searchProduct('8710449944194')
-        }, 3000)
-      }
+      // if (isSimulator) {
+      //   console.log(['isSimulator', isSimulator])
+      //   setTimeout(() => {
+      //     searchProduct('8710449944194')
+      //   }, 3000)
+      // }
     }
   }, [isFocused])
 
@@ -80,8 +80,11 @@ const ScanBarcode = ({ navigation }: ScanBarcodeProps) => {
           })
         } else {
           console.log('PRODUCT NOT FOUND')
-          navigation.navigate('ProductNotFound', {
-            barcode: barcode,
+          // navigation.navigate('ProductNotFound', {
+          //   barcode: barcode,
+          // })
+          navigation.navigate('ProductDetails', {
+            notFound: true,
           })
         }
       })
@@ -92,7 +95,7 @@ const ScanBarcode = ({ navigation }: ScanBarcodeProps) => {
 
   const handleBarcodeScan = (scanResult: { data: any }) => {
     if (scanResult.data != null) {
-      setScan(false)
+      // setScan(false)
       let barcode = scanResult.data
       console.warn(['scanned', scanResult.data])
       searchProduct(barcode)
@@ -113,6 +116,7 @@ const ScanBarcode = ({ navigation }: ScanBarcodeProps) => {
         // mirrorImage={false}
         captureAudio={false}
         onBarCodeRead={(e) => {
+          console.log('e')
           if (scan) {
             handleBarcodeScan(e)
           }
