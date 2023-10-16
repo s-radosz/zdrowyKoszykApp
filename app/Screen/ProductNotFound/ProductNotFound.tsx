@@ -20,13 +20,13 @@ type ProductNotFoundProps = {
 }
 
 const ProductNotFound = ({ navigation, route }: ProductNotFoundProps) => {
-  useEffect(() => {
-    const barcode = route?.params?.barcode ? route?.params?.barcode : null
+  // useEffect(() => {
+  //   const barcode = route?.params?.barcode ? route?.params?.barcode : null
 
-    if (barcode) {
-      console.log(['Product barcode', barcode])
-    }
-  }, [route?.params?.barcode])
+  //   if (barcode) {
+  //     console.log(['Product barcode', barcode])
+  //   }
+  // }, [route?.params?.barcode])
 
   return (
     <SafeAreaView style={[{ flex: 1 }, styles.container]}>

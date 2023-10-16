@@ -59,16 +59,16 @@ const ScanBarcode = ({ navigation }: ScanBarcodeProps) => {
   }, [isFocused])
 
   const searchProduct = (barcode: string) => {
-    console.log([
-      'searchProduct',
-      `${context?.API_URL}product/find/${barcode}`,
-      process?.env,
-    ])
-    console.log(['link', `${context?.API_URL}product/find/${barcode}`])
+    // console.log([
+    //   'searchProduct',
+    //   `${context?.API_URL}product/find/${barcode}`,
+    //   process?.env,
+    // ])
+    // console.log(['link', `${context?.API_URL}product/find/${barcode}`])
     axios
       .get(`${context.API_URL}product/find/${barcode}`)
       .then(async (res) => {
-        console.log(['rsp', res.data])
+        // console.log(['rsp', res.data])
 
         await analytics().logEvent('scan_barcode', {
           item_name: barcode,
@@ -79,7 +79,7 @@ const ScanBarcode = ({ navigation }: ScanBarcodeProps) => {
             productDetails: res.data,
           })
         } else {
-          console.log('PRODUCT NOT FOUND')
+          // console.log('PRODUCT NOT FOUND')
           // navigation.navigate('ProductNotFound', {
           //   barcode: barcode,
           // })

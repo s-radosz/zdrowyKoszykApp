@@ -33,22 +33,36 @@ const ProductDetails = ({ navigation, route }: ProductDetailsProps) => {
 
   useEffect(() => {
     context?.handleChangeOutOfContainerBackgroundColor('#fff')
-    console.log([
-      'route?.params?.productDetails',
-      route?.params?.productDetails,
-    ])
+    // console.log([
+    //   'route?.params?.productDetails',
+    //   route?.params?.productDetails,
+    // ])
     const productDetails = route?.params?.productDetails?.result
       ? route?.params?.productDetails?.result
       : null
 
     if (productDetails) {
-      setName(productDetails.name ? productDetails.name : '')
-      setDetails(productDetails.details ? productDetails.details : '')
+      setName(productDetails?.name)
+      setDetails(productDetails?.details)
       setIngredients(
-        productDetails.ingredients && productDetails.ingredients.length > 0
-          ? productDetails.ingredients
+        productDetails?.ingredients
+          ? Object.values(
+              productDetails?.ingredients.reduce(
+                (acc, obj) => ({ ...acc, [obj.name]: obj }),
+                {},
+              ),
+            )
           : [],
       )
+      // console.log([
+      //   'productDetails.ingredients',
+      //   Object.values(
+      //     productDetails?.ingredients.reduce(
+      //       (acc, obj) => ({ ...acc, [obj.name]: obj }),
+      //       {},
+      //     ),
+      //   ),
+      // ])
     }
   }, [route?.params?.productDetails?.result])
 

@@ -7,15 +7,13 @@ React Native app to scan products ingredients
 1. rm -rf android/build
 2. react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res
 3. delete all folders drawable-{} except drawable
-4. cd android
-5. ./gradlew assembleRelease
+4. cd android && ./gradlew assembleRelease
 
 apk file in android/outputs/apk/release/app-release.apk
 
 # android aab
 
-1. cd android
-2. ./gradlew bundleRelease
+1. cd android && ./gradlew bundleRelease
 
 ## ios file
 

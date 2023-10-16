@@ -32,7 +32,7 @@ const Welcome = ({ navigation }: WelcomeProps) => {
 
   useEffect(() => {
     if (isFocused) {
-      console.log(['nav', navigation])
+      // console.log(['nav', navigation])
       context?.handleChangeOutOfContainerBackgroundColor('#74b49b')
     }
   }, [isFocused])
